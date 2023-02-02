@@ -1,0 +1,28 @@
+{
+  "name": "house-of-bidders_auction",
+  "version": "1.0.0",
+  "description": "House of Bidders is an auction house for everyone who loves to sell or bid some special piece",
+  "main": "index.js",
+  "scripts": {
+    "build": "sass src/scss:dist/css",
+    "watch": "sass --watch src/scss:dist/css & live-server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Enirose/House-of-Bidders_Auction.git"
+  },
+  "keywords": [],
+  "author": "Maria Enirose Hellum",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Enirose/House-of-Bidders_Auction/issues"
+  },
+  "homepage": "https://github.com/Enirose/House-of-Bidders_Auction#readme",
+  "devDependencies": {
+    "live-server": "^1.2.2",
+    "sass": "^1.58.0"
+  },
+  "dependencies": {
+    "bootstrap": "^5.2.0"
+  }
+}

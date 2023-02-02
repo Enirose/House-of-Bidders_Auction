@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Registration form for everyone who wants to be a member of House of bidders">
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <script src="./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js" defer></script>
+    <title>House of Bidder|Registration</title>
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-purple">
+            <!-- Container wrapper -->
+            <div class="container-fluid">
+                <!-- Toggle button -->
+                <button class="navbar-toggler" type="button" data-mdb-toggle="collapse"
+                    data-mdb-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <i class="fas fa-bars"></i>
+                </button>
+        
+                <!-- Collapsible wrapper -->
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <!-- Navbar brand -->
+                    <a class="navbar-brand mt-2 mt-lg-0" href="#">
+                        <img src="./img/logo.jpg" height="60" alt="MDB Logo"
+                            loading="lazy" />
+                    </a>
+                </div>
+                <!-- Collapsible wrapper -->
+        
+                <!-- Right elements -->
+                <div class="text-end">
+                    <!-- <button type="button" class="btn btn-outline-warning me-2" data-auth="logout" data-visible="loggedIn">
+                        Logout
+                    </button> -->
+                    <button type="button" class="btn btn-outline-warning me-2" data-bs-toggle="modal" data-bs-target="#loginModal"
+                        data-auth="login" data-visible="loggedOut">
+                        Login
+                    </button>
+                    <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#registerModal"
+                        data-auth="register" data-visible="loggedOut">
+                        Create Profile
+                    </button>
+                </div>
+                <!-- Right elements -->
+            </div>
+            <!-- Container wrapper -->
+        </nav>
+    </header>
+    <main>
+
+    </main>
+    <footer>
+
+    </footer>
+
+    <div class="modal fade" id="loginModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+        aria-labelledby="loginModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog modal-dialog-centered modal-dialog-scrollable">
+            <form class="modal-content" id="loginForm">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="loginModalLabel">Login</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="form-floating mb-3">
+                        <input required type="email" class="form-control" id="loginEmail" name="email"
+                            pattern="[\w\-.]+@(stud.)?noroff.no$" title="Only Noroff student or teacher emails are valid."
+                            placeholder="name@example.com" />
+                        <label for="loginEmail">Email address</label>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <input required type="password" minlength="8" class="form-control" id="loginPassword"
+                            name="password" placeholder="Password" />
+                        <label for="loginPassword">Password</label>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="reset" class="btn btn-secondary" data-bs-dismiss="modal">
+                        Close
+                    </button>
+                    <button type="button" class="btn btn-outline-success" data-bs-toggle="modal"
+                        data-bs-target="#registerModal" data-auth="register" data-visible="loggedOut">Register</button>
+                    <button type="submit" class="btn btn-success">
+                        Login
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="modal fade" id="registerModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+        aria-labelledby="registerModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog modal-dialog-centered modal-dialog-scrollable">
+            <form class="modal-content" id="registerForm">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="registerModalLabel">Create Profile</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="form-floating mb-3">
+                        <input required type="text" class="form-control" id="registerName" name="name"
+                            placeholder="name@example.com" />
+                        <label for="registerName">Name</label>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <input required type="email" class="form-control" id="registerEmail" name="email"
+                            pattern="[\w\-.]+@(stud.)?noroff.no$" title="Only Noroff student or teacher emails are valid."
+                            placeholder="name@example.com" />
+                        <label for="registerEmail">Email address</label>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <input required type="password" minlength="8" class="form-control" id="registerPassword"
+                            name="password" placeholder="Password" />
+                        <label for="registerPassword">Password</label>
+                    </div>
+                    <div class="form-floating">
+                        <input required type="url" class="form-control" id="registerAvatar" name="avatar"
+                            placeholder="Avatar URL" />
+                        <label for="registerAvatar">Avatar URL</label>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="reset" class="btn btn-secondary" data-bs-dismiss="modal">
+                        Close
+                    </button>
+                    <button type="button" class="btn btn-outline-success" data-bs-toggle="modal"
+                        data-bs-target="#loginModal" data-auth="login" data-visible="loggedOut">Login</button>
+                    <button type="submit" class="btn btn-success">Create Profile</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+</body>
+</html>
