@@ -10758,5 +10758,18 @@ textarea.form-control-lg {
     display: none !important;
   }
 }
+.carousel-inner {
+  padding: 25px;
+  background-color: #FDF1AA;
+}
+
+.button, .btn, .btn-primary {
+  background-color: #8165ca;
+  border-color: #8165ca;
+}
+
+.navbar-toggler {
+  background-color: #8165ca;
+}
 
 /*# sourceMappingURL=styles.css.map */
