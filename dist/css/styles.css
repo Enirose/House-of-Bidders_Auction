@@ -10768,6 +10768,11 @@ textarea.form-control-lg {
   border-color: #8165ca;
 }
 
+.btn:hover {
+  background-color: #ED5C9D;
+  border-color: #ED5C9D;
+}
+
 .navbar-toggler {
   background-color: #8165ca;
 }
