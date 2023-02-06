@@ -27,10 +27,10 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="#">Home</a>
+                            <a class="nav-link active" aria-current="page" href="index.html">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Profile</a>
+                            <a class="nav-link" href="profile.html">Profile</a>
                         </li>
                     </ul>
                     <div class="d-flex">
@@ -46,11 +46,10 @@
 
 
     <main>
-        <hr>
-        <div class="container-fluid">
-            <div class="row row-cols-1 row-cols-md-3 g-4">
-                <div class="d-flex">
-                    <h1>Specific Lists</h1>
+        <div class="container">
+            <div class="row row-cols-md-1 row-cols-md-3 mt-2 ">
+                <div>
+                    <h1>Specific List</h1>
                 </div>
             </div>
         </div>
@@ -64,10 +63,17 @@
                             <h5 class="card-title">Card title</h5>
                             <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
                                 additional
-                                content. This content is a little bit longer.</p>
+                                content. This content is a little bit longer.
+                            </p>
                         </div>
                         <div class="card-footer">
-                            <small class="text-muted">Last updated 3 mins ago</small>
+                            <small class="text-muted">
+                                <form action="/action_page.php">
+                                    <label for="auction">Bidding Ends:</label>
+                                    <input type="datetime-local" id="endBidding" class"form-control">
+                                    <input type="submit">
+                                </form>
+                            </small>
                         </div>
                     </div>
                 </div>
@@ -77,11 +83,8 @@
         <section>
             <div class="container-fluid">
                 <div class="row mt-2">
-                    <label for="auction">Bidding Ends: (date and time):</label>
-                    <form action="/action_page.php">
-                        <input type="datetime-local" id="endBidding" class"form-control">
-                        <input type="submit">
-                    </form>
+                    
+                    
                 </div>
             </div>
         </section>

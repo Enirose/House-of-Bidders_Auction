@@ -10,207 +10,86 @@
     <script src="./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js" defer></script>
     <title>House of Bidder|Registration</title>
 </head>
+
 <body>
     <header>
-        <nav class="navbar navbar-expand-lg navbar-light bg-purple">
-            <!-- Container wrapper -->
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <div class="container-fluid">
-                <!-- Toggle button -->
-                <button class="navbar-toggler" type="button" data-mdb-toggle="collapse"
-                    data-mdb-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-                    aria-label="Toggle navigation">
-                    <i class="fas fa-bars"></i>
-                </button>
-
-                <!-- Collapsible wrapper -->
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <!-- Navbar brand -->
-                    <a class="navbar-brand mt-2 mt-lg-0" href="#">
-                        <img src="./img/logo.jpg" height="60" alt="MDB Logo"
-                            loading="lazy" />
-                    </a>
-                </div>
-                <!-- Collapsible wrapper -->
-
-                <!-- Right elements -->
-                <div class="text-end">
-                    <!-- <button type="button" class="btn btn-outline-warning me-2" data-auth="logout" data-visible="loggedIn">
-                        Logout
-                    </button> -->
-                    <button type="button" class="btn btn-outline-warning me-2" data-bs-toggle="modal" data-bs-target="#loginModal"
-                        data-auth="login" data-visible="loggedOut">
-                        Login
-                    </button>
-                    <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#registerModal"
-                        data-auth="register" data-visible="loggedOut">
-                        Create Profile
-                    </button>
-                </div>
-                <!-- Right elements -->
+                <a class="navbar-brand" href="index.html">
+                    <img src="./img/logo.jpg" height="60" alt="Logo" loading="lazy" />
+                </a>
             </div>
-            <!-- Container wrapper -->
         </nav>
     </header>
+
     <main>
-        <!-- Carousel -->
-        <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
-            <div class="carousel-inner">
-                <div class="carousel-item active" data-bs-interval="1000">
-                    <img src="https://mdbcdn.b-cdn.net/img/new/slides/042.webp" class="d-block w-100" alt="...">
-                </div>
-                <div class="carousel-item" data-bs-interval="2000">
-                    <img src="https://mdbcdn.b-cdn.net/img/new/slides/043.webp" class="d-block w-100" alt="...">
-                </div>
-                <div class="carousel-item">
-                    <img src="https://mdbcdn.b-cdn.net/img/new/slides/041.webp" class="d-block w-100" alt="...">
-                </div>
-            </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
-              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-              <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="next">
-              <span class="carousel-control-next-icon" aria-hidden="true"></span>
-              <span class="visually-hidden">Next</span>
-            </button>
-        </div>
+        <section class="vh-100" style="background-color: #9A616D;">
+            <div class="container py-5 h-100">
+                <div class="row d-flex justify-content-center align-items-center h-100">
+                    <div class="col col-xl-10">
+                        <div class="card" style="border-radius: 1rem;">
+                            <div class="row g-0">
+                                <div class="col-md-6 col-lg-5 d-none d-md-block mt-5">
+                                    <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/img1.webp"
+                                        alt="login form" class="img-fluid"  style="border-radius: 1rem;" />
+                                </div>
+                                <div class="col-md-6 col-lg-7 d-flex align-items-center">
+                                    <div class="card-body p-4 p-lg-5 text-black">
 
-        <hr>
-        <div class="row row-cols-1 row-cols-md-3 g-4">
-            <div class="col">
-                <div class="card">
-                    <img src="https://mdbcdn.b-cdn.net/img/new/standard/city/041.webp" class="card-img-top" alt="Hollywood Sign on The Hill"/>
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">
-                            This is a longer card with supporting text below as a natural lead-in to
-                            additional content. This content is a little bit longer.
-                        </p>
+                                        <form id="registrationForm">
+                                            <div class="d-flex align-items-center mb-3 pb-1">
+                                                <img src="./img/logo.jpg" height="60" alt="Logo image">
+                                                <span class="h1 fw-bold mb-0">House of Bidders</span>
+                                            </div>
+                                            
+                                            <h5 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;">Sign into your
+                                                account
+                                            </h5>
+                                        
+                                            <!-- Username input -->
+                                            <div class="form-group mb-4">
+                                                <label for="name" class="form-label">Username</label>
+                                                <input type="name" id="name" class="form-control" required pattern="^[\w]+$"
+                                                    title="User must contain upper and lower case, number and underscore(_)." />
+                                            </div>
+                                        
+                                            <!-- Email input -->
+                                            <div class="form-group mb-4">
+                                                <label for="email" class="form-label">Email</label>
+                                                <input type="email" id="email" class="form-control" required pattern="^[\w\-.]+@(stud.)?noroff.no$"
+                                                    title="Only the @(stud.)noroff.no domains are allowed to register." />
+                                            </div>
+                                        
+                                            <!-- Password input -->
+                                            <div class="form-group mb-4">
+                                                <label for="password" class="form-label">Password</label>
+                                                <input type="password" name="password" class="form-control" required minLength="8" />
+                                            </div>
+
+                                            <div class="form-group mb-4">
+                                                <label for="avatar" class="form-label">Avatar</label>
+                                                <input type="url" class="form-control" id="registerAvatar" name="avatar" placeholder="Avatar URL" />
+                                            </div>
+                                        
+                                            <button class="btn btn-primary-login mt-4 mb-3 ps-8 pe-8 shadow text-uppercase btn-login">
+                                                Register
+                                            </button>
+                                        
+                                            <div class="card-text mb-4">
+                                                Already yet a member?
+                                                <a href="login.html" style= "color: #ff5ca8;">Login</a>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-            <div class="col">
-                <div class="card">
-                    <img src="https://mdbcdn.b-cdn.net/img/new/standard/city/042.webp" class="card-img-top" alt="Palm Springs Road"/>
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">
-                            This is a longer card with supporting text below as a natural lead-in to
-                            additional content. This content is a little bit longer.
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="card">
-                    <img src="https://mdbcdn.b-cdn.net/img/new/standard/city/043.webp" class="card-img-top" alt="Los Angeles Skyscrapers"/>
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">
-                            This is a longer card with supporting text below as a natural lead-in to
-                            additional content.
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <div class="col">
-              <div class="card">
-                    <img src="https://mdbcdn.b-cdn.net/img/new/standard/city/044.webp" class="card-img-top" alt="Skyscrapers"/>
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">
-                            This is a longer card with supporting text below as a natural lead-in to
-                            additional content. This content is a little bit longer.
-                        </p>
-                    </div>
-              </div>
-            </div>
-          </div>
-
-
-
+        </section>
     </main>
-    <footer>
-
-    </footer>
-
-    <div class="modal fade" id="loginModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
-        aria-labelledby="loginModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog modal-dialog-centered modal-dialog-scrollable">
-            <form class="modal-content" id="loginForm">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="loginModalLabel">Login</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <div class="form-floating mb-3">
-                        <input required type="email" class="form-control" id="loginEmail" name="email"
-                            pattern="[\w\-.]+@(stud.)?noroff.no$" title="Only Noroff student or teacher emails are valid."
-                            placeholder="name@example.com" />
-                        <label for="loginEmail">Email address</label>
-                    </div>
-                    <div class="form-floating mb-3">
-                        <input required type="password" minlength="8" class="form-control" id="loginPassword"
-                            name="password" placeholder="Password" />
-                        <label for="loginPassword">Password</label>
-                    </div>
-                </div>
-                <div class="modal-footer">
-                    <button type="reset" class="btn btn-secondary" data-bs-dismiss="modal">
-                        Close
-                    </button>
-                    <button type="button" class="btn btn-outline-success" data-bs-toggle="modal"
-                        data-bs-target="#registerModal" data-auth="register" data-visible="loggedOut">Register</button>
-                    <button type="submit" class="btn btn-success">
-                        Login
-                    </button>
-                </div>
-            </form>
-        </div>
-    </div>
-
-    <div class="modal fade" id="registerModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
-        aria-labelledby="registerModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog modal-dialog-centered modal-dialog-scrollable">
-            <form class="modal-content" id="registerForm">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="registerModalLabel">Create Profile</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <div class="form-floating mb-3">
-                        <input required type="text" class="form-control" id="registerName" name="name"
-                            placeholder="name@example.com" />
-                        <label for="registerName">Name</label>
-                    </div>
-                    <div class="form-floating mb-3">
-                        <input required type="email" class="form-control" id="registerEmail" name="email"
-                            pattern="[\w\-.]+@(stud.)?noroff.no$" title="Only Noroff student or teacher emails are valid."
-                            placeholder="name@example.com" />
-                        <label for="registerEmail">Email address</label>
-                    </div>
-                    <div class="form-floating mb-3">
-                        <input required type="password" minlength="8" class="form-control" id="registerPassword"
-                            name="password" placeholder="Password" />
-                        <label for="registerPassword">Password</label>
-                    </div>
-                    <div class="form-floating">
-                        <input required type="url" class="form-control" id="registerAvatar" name="avatar"
-                            placeholder="Avatar URL" />
-                        <label for="registerAvatar">Avatar URL</label>
-                    </div>
-                </div>
-                <div class="modal-footer">
-                    <button type="reset" class="btn btn-secondary" data-bs-dismiss="modal">
-                        Close
-                    </button>
-                    <button type="button" class="btn btn-outline-success" data-bs-toggle="modal"
-                        data-bs-target="#loginModal" data-auth="login" data-visible="loggedOut">Login</button>
-                    <button type="submit" class="btn btn-success">Create Profile</button>
-                </div>
-            </form>
-        </div>
-    </div>
 
 </body>
+
 </html>
