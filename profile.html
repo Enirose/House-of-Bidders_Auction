@@ -5,6 +5,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="House of bidders profile page, where every members can edit, update and check their account and listings that they have.">
+    <script src="https://kit.fontawesome.com/b78b269c14.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Montserrat:wght@500&family=Open+Sans:wght@300&family=Playfair+Display:ital,wght@0,500;1,400&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="./dist/css/styles.css">
     <script src="./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js" defer></script>
     <title>House of Bidders | Profile</title>
@@ -59,8 +65,9 @@
                                 <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava3.webp"
                                     alt="avatar" class="rounded-circle img-fluid" style="width: 150px;">
                                 <h5 class="my-3">John Smith</h5>
-                                <p class="text-muted mb-1">Full Stack Developer</p>
-                                <p class="text-muted mb-4">Bay Area, San Francisco, CA</p>
+                                <button class="btn btn-primary mt-3" data-bs-toggle="modal" data-bs-target="#avatar-modal">
+                                    Change User Image
+                                </button>
                             </div>
                         </div>
                         
@@ -94,11 +101,17 @@
                                         </div>
                                     </div>
                                 </div>
+                                <button type="button" class="btn btn-primary me-auto" data-bs-toggle="modal"
+                                    data-bs-target="#createListing-modal">Create
+                                    New listing
+                                </button>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Create auction listing -->
+                    
+
+                    <!-- Create auction listing
                     <div class="col-lg-8">
                         <div class="card mb-4">
                             <div class="card-body">
@@ -110,7 +123,7 @@
                                 
                                     <div class="form-group mb-3">
                                         <label for="descriptionListing">Description</label>
-                                        <textarea name="body" class="form-control" id="description-listing" cols="30" rows="5"></textarea>
+                                        <textarea name="body" class="form-control" id="description-listing" cols="30" rows="2"></textarea>
                                     </div>
                                 
                                     <div class="form-group mb-3">
@@ -140,7 +153,7 @@
                                     </button>
                                 </form>
                             </div>
-                        </div>
+                        </div> -->
 
                         <!-- My auction list -->
                     <div class="col-lg-8">
@@ -214,6 +227,70 @@
                 </div>
             </div>
         </section>
+
+        <!-- Modal for create listing -->
+        <div class="modal fade" id="createListing-modal" tabindex="-1" aria-labelledby="create-listing-modal"
+            aria-hidden="true">
+            <div class="modal-dialog">
+                <form class="modal-content" id="create-listing">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-3" id="create-listing-modal">New listing</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="form-floating mb-3">
+                            <input required type="text" class="form-control" id="title-listing" name="title"
+                                placeholder="title" />
+                            <label for="titleListing">Title</label>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <input type="text" class="form-control" id="description-listing" name="description"
+                                placeholder="description" />
+                            <label for="description">Description</label>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <input type="text" class="form-control" id="tags-listing" name="tags" placeholder="tags" />
+                            <label for="tags">Tags</label>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <input required type="url" class="form-control" id="image-listing" name="media"
+                                placeholder="listing image URL" />
+                            <label for="listingImage">Listing image</label>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <input required type="datetime-local" class="form-control" id="description-endDate" name="endsAt"
+                                placeholder="end date" />
+                            <label for="endDate">End date</label>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button class="w-100 mb-2 btn btn-lg rounded-3 btn-outline-dark" type="submit">Create</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <!-- Modal for Channge avatar -->
+        <div class="modal fade" id="avatar-modal" tabindex="-1" aria-labelledby="avatar-modal-label" aria-hidden="true">
+            <div class="modal-dialog">
+                <form class="modal-content" id="avatar-image">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-3">Change user image</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="form-floating mb-3">
+                            <input required type="url" class="form-control avatar-input" name="avatar"
+                                placeholder="avatar image URL" />
+                            <label for="avatarImage">User image</label>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button class="w-100 mb-2 btn btn-lg rounded-3 btn-primary" type="submit">Change</button>
+                    </div>
+                </form>
+            </div>
+        </div>
 
     </main>
     
