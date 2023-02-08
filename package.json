@@ -4,6 +4,7 @@
   "description": "House of Bidders is an auction house for everyone who loves to sell or bid some special piece",
   "main": "index.js",
   "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
     "build": "sass src/scss:dist/css",
     "watch": "sass --watch src/scss:dist/css & live-server"
   },
