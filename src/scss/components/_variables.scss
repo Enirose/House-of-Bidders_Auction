@@ -1,11 +1,18 @@
 $purple: #8165ca;
-$pink: #ED5C9D;
-$yellow: #FDF1AA;
+$pink: #ed5c9d;
+$yellow: #fdf1aa;
 $blue: #d2edf6;
 
 $primary: #8165ca;
 $secondary: #d2edf6;
 
-h1, h2, h3, h4, h5, .h1 {
-    font-family: 'playfair display', 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+h1,
+h2,
+h3,
+h4,
+h5,
+.h1 {
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande',
+    'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  color: $purple;
 }

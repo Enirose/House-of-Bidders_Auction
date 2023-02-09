@@ -1,121 +1,163 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Items page for every member of house of bidders, where they can view and reserve an items the love">
-    <script src="https://kit.fontawesome.com/b78b269c14.js" crossorigin="anonymous"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Items page for every member of house of bidders, where they can view and reserve an items the love"
+    />
+    <script
+      src="https://kit.fontawesome.com/b78b269c14.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-        href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Montserrat:wght@500&family=Open+Sans:wght@300&family=Playfair+Display:ital,wght@0,500;1,400&display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet" href="./dist/css/styles.css">
-    <script src="./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js" defer></script>
+      href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Montserrat:wght@500&family=Open+Sans:wght@300&family=Playfair+Display:ital,wght@0,500;1,400&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./dist/css/styles.css" />
+    <script
+      src="./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"
+      defer
+    ></script>
     <title>House of Bidder | List of items</title>
-</head>
+  </head>
 
-<body>
+  <body>
     <header>
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <div class="container-fluid">
-                <a class="navbar-brand" href="#">
-                    <img src="./img/logo.jpg" height="60" alt="MDB Logo" loading="lazy" />
-                </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                    aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="/index.html">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="/profile.html">Profile</a>
-                        </li>
-                    </ul>
-                    <div class="d-flex">
-                        <button type="button" class="btn btn-outline-warning me-2" data-bs-toggle="modal"
-                            data-bs-target="#loginModal" data-auth="login" data-visible="loggedOut">
-                            Logout
-                        </button>
-                    </div>
-                </div>
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">
+            <img
+              src="./img/logo.jpg"
+              height="60"
+              alt="MDB Logo"
+              loading="lazy"
+            />
+          </a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a
+                  class="nav-link active"
+                  aria-current="page"
+                  href="/index.html"
+                  >Home</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/profile.html">Profile</a>
+              </li>
+            </ul>
+            <div class="d-flex">
+              <button
+                type="button"
+                class="btn btn-outline-warning me-2"
+                data-bs-toggle="modal"
+                data-bs-target="#loginModal"
+                data-auth="login"
+                data-visible="loggedOut"
+              >
+                Logout
+              </button>
             </div>
-        </nav>
+          </div>
+        </div>
+      </nav>
     </header>
 
-
     <main>
-        <hr>
-        <div class="container-fluid">
-            <div class="row row-cols-1 row-cols-md-3 g-4">
-                <div class="d-flex">
-                    <h1>Newest Listing</h1>
-                </div>
-            </div>
+      <hr />
+      <div class="container-fluid">
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+          <div class="d-flex">
+            <h1>Newest Listing</h1>
+          </div>
         </div>
+      </div>
 
-        <div class="container-fluid">
-            <div class="row row-cols-1 row-cols-md-5 g-4 mt-5 mb-3">
-                <div class="col">
-                    <div class="card h-100">
-                        <a href="list.html">
-                            <img src="https://mdbcdn.b-cdn.net/img/new/standard/city/041.webp" class="card-img-top" alt="Auction picture">
-                        </a>                 
-                        <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
-                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional
-                                content. This content is a little bit longer.</p>
-                        </div>
-                        <div class="card-footer">
-                            <small class="text-muted">Last updated 3 mins ago</small>
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="card h-100">
-                        <a href="list.html">
-                        <img src="https://mdbcdn.b-cdn.net/img/new/standard/city/042.webp" class="card-img-top" alt="Auction picture">
-                        </a>
-                        <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
-                            <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
-                        </div>
-                        <div class="card-footer">
-                            <small class="text-muted">Last updated 3 mins ago</small>
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="card h-100">
-                        <img src="https://mdbcdn.b-cdn.net/img/new/standard/city/044.webp" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
-                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional
-                                content. This card has even longer content than the first to show that equal height action.</p>
-                        </div>
-                        <div class="card-footer">
-                            <small class="text-muted">Last updated 3 mins ago</small>
-                        </div>
-                    </div>
-                </div>
+      <div class="container-fluid">
+        <div class="row row-cols-1 row-cols-md-3 g-4 px-sm-3 px-md-4 mt-5 mb-3">
+          <div class="col">
+            <div class="card h-100">
+              <a href="list.html">
+                <img
+                  src="https://mdbcdn.b-cdn.net/img/new/standard/city/041.webp"
+                  class="card-img-top"
+                  alt="Auction picture"
+                />
+              </a>
+              <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">
+                  This is a wider card with supporting text below as a natural
+                  lead-in to additional content. This content is a little bit
+                  longer.
+                </p>
+              </div>
+              <div class="card-footer">
+                <small class="text-muted">Last updated 3 mins ago</small>
+              </div>
             </div>
+          </div>
+          <div class="col">
+            <div class="card h-100">
+              <a href="list.html">
+                <img
+                  src="https://mdbcdn.b-cdn.net/img/new/standard/city/042.webp"
+                  class="card-img-top"
+                  alt="Auction picture"
+                />
+              </a>
+              <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">
+                  This card has supporting text below as a natural lead-in to
+                  additional content.
+                </p>
+              </div>
+              <div class="card-footer">
+                <small class="text-muted">Last updated 3 mins ago</small>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card h-100">
+              <img
+                src="https://mdbcdn.b-cdn.net/img/new/standard/city/044.webp"
+                class="card-img-top"
+                alt="..."
+              />
+              <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">
+                  This is a wider card with supporting text below as a natural
+                  lead-in to additional content. This card has even longer
+                  content than the first to show that equal height action.
+                </p>
+              </div>
+              <div class="card-footer">
+                <small class="text-muted">Last updated 3 mins ago</small>
+              </div>
+            </div>
+          </div>
         </div>
-
-
-
-
+      </div>
     </main>
-    <footer>
-
-    </footer>
-
-
-</body>
-
+    <footer></footer>
+  </body>
 </html>
