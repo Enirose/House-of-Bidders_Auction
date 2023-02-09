@@ -1,4 +1,10 @@
 import * as storage from '../../localStorage/localStorage.mjs';
+/**
+ * Login user
+ * @param {string} url
+ * @param {object} profile
+ * @returns
+ */
 
 const method = 'post';
 
