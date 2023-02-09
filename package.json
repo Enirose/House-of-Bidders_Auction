@@ -6,7 +6,11 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "sass src/scss:dist/css",
-    "watch": "sass --watch src/scss:dist/css & live-server"
+    "watch": "sass --watch src/scss:dist/css & live-server",
+    "format": "prettier -w src/js/**/*.mjs",
+    "lint": "eslint src/**/*.mjs",
+    "lint-fix": "eslint src/**/*.mjs --cache --fix",
+    "prepare": "husky install"
   },
   "repository": {
     "type": "git",
@@ -20,10 +24,26 @@
   },
   "homepage": "https://github.com/Enirose/House-of-Bidders_Auction#readme",
   "devDependencies": {
+    "eslint": "^8.33.0",
+    "husky": "^8.0.3",
+    "lint-staged": "^13.1.1",
     "live-server": "^1.2.2",
+    "prettier": "^2.8.4",
     "sass": "^1.58.0"
   },
   "dependencies": {
     "bootstrap": "^5.2.0"
+  },
+  "lint-staged": {
+    "*.mjs": [
+      "prettier --write",
+      "eslint --fix"
+    ],
+    "*.html": [
+      "prettier --write"
+    ],
+    "*.scss": [
+      "prettier --write"
+    ]
   }
 }
