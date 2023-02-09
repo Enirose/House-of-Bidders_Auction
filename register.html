@@ -1,103 +1,152 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Registration form for everyone who wants to be a member of House of bidders">
-    <script src="https://kit.fontawesome.com/b78b269c14.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="./dist/css/styles.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Registration form for everyone who wants to be a member of House of bidders"
+    />
+    <script
+      src="https://kit.fontawesome.com/b78b269c14.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="./dist/css/styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-        href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Montserrat:wght@500&family=Open+Sans:wght@300&family=Playfair+Display:ital,wght@0,500;1,400&display=swap"
-        rel="stylesheet">
+      href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Montserrat:wght@500&family=Open+Sans:wght@300&family=Playfair+Display:ital,wght@0,500;1,400&display=swap"
+      rel="stylesheet"
+    />
     <title>House of Bidder | Registration</title>
-</head>
+  </head>
 
-<body>
+  <body>
     <header>
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <div class="container-fluid">
-                <a class="navbar-brand" href="index.html">
-                    <img src="./img/logo.jpg" height="60" alt="Logo" loading="lazy" />
-                </a>
-            </div>
-        </nav>
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="index.html">
+            <img src="./img/logo.jpg" height="60" alt="Logo" loading="lazy" />
+          </a>
+        </div>
+      </nav>
     </header>
 
     <main>
-        <section class="vh-100" style="background-color: #9A616D;">
-            <div class="container py-5 h-100">
-                <div class="row d-flex justify-content-center align-items-center h-100">
-                    <div class="col col-xl-10">
-                        <div class="card" style="border-radius: 1rem;">
-                            <div class="row g-0">
-                                <div class="col-md-6 col-lg-5 d-none d-md-block mt-0">
-                                    <img src="./img/pexels-steve-johnson-1585325.jpg"
-                                        alt="login form" class="img-fluid"  style="border-radius: 1rem;" />
-                                </div>
-                                <div class="col-md-6 col-lg-7 d-flex align-items-center">
-                                    <div class="card-body p-4 p-lg-5 text-black">
-
-                                        <form id="registrationForm">
-                                            <div class="d-flex align-items-center mb-3 pb-1">
-                                                <img src="./img/logo.jpg" height="60" alt="Logo image">
-                                                <span class="h1 fw-bold mb-0">House of Bidders</span>
-                                            </div>
-                                            
-                                            <h5 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;">Sign into your
-                                                account
-                                            </h5>
-                                        
-                                            <!-- Username input -->
-                                            <div class="form-group mb-4">
-                                                <label for="name" class="form-label">Username</label>
-                                                <input type="name" id="name" class="form-control" required pattern="^[\w]+$"
-                                                    title="User must contain upper and lower case, number and underscore(_)." />
-                                            </div>
-                                        
-                                            <!-- Email input -->
-                                            <div class="form-group mb-4">
-                                                <label for="email" class="form-label">Email</label>
-                                                <input type="email" id="email" class="form-control" required pattern="^[\w\-.]+@(stud.)?noroff.no$"
-                                                    title="Only the @(stud.)noroff.no domains are allowed to register." />
-                                            </div>
-                                        
-                                            <!-- Password input -->
-                                            <div class="form-group mb-4">
-                                                <label for="password" class="form-label">Password</label>
-                                                <input type="password" name="password" class="form-control" required minLength="8" />
-                                            </div>
-
-                                            <div class="form-group mb-4">
-                                                <label for="avatar" class="form-label">Avatar</label>
-                                                <input type="url" class="form-control" id="registerAvatar" name="avatar" placeholder="Avatar URL" />
-                                            </div>
-                                        
-                                            <button class="btn btn-primary-login mt-4 mb-3 ps-8 pe-8 shadow text-uppercase btn-login">
-                                                Register
-                                            </button>
-                                        
-                                            <div class="card-text mb-4">
-                                                Already yet a member?
-                                                <a href="/login.html" style= "color: #ff5ca8;">Login here!</a>
-                                            </div>
-                                        </form>
-                                    </div>
-                                </div>
-                            </div>
+      <section class="vh-100" style="background-color: #9a616d">
+        <div class="container py-5 h-100">
+          <div
+            class="row d-flex justify-content-center align-items-center h-100"
+          >
+            <div class="col col-xl-10">
+              <div class="card" style="border-radius: 1rem">
+                <div class="row g-0">
+                  <div class="col-md-6 col-lg-5 d-none d-md-block mt-0">
+                    <img
+                      src="./img/pexels-steve-johnson-1585325.jpg"
+                      alt="login form"
+                      class="img-fluid"
+                      style="border-radius: 1rem"
+                    />
+                  </div>
+                  <div class="col-md-6 col-lg-7 d-flex align-items-center">
+                    <div class="card-body p-4 p-lg-5 text-black">
+                      <form id="registrationForm">
+                        <div class="d-flex align-items-center mb-3 pb-1">
+                          <img
+                            src="./img/logo.jpg"
+                            height="60"
+                            alt="Logo image"
+                          />
+                          <span class="h1 fw-bold mb-0">House of Bidders</span>
                         </div>
+
+                        <h5
+                          class="fw-normal mb-3 pb-3"
+                          style="letter-spacing: 1px"
+                        >
+                          Sign into your account
+                        </h5>
+
+                        <!-- Username input -->
+                        <div class="form-group mb-4">
+                          <label for="name" class="form-label">Username</label>
+                          <input
+                            type="name"
+                            name="name"
+                            id="name"
+                            class="form-control"
+                            required
+                            pattern="^[\w]+$"
+                            title="User must contain upper and lower case, number and underscore(_)."
+                          />
+                        </div>
+
+                        <!-- Email input -->
+                        <div class="form-group mb-4">
+                          <label for="email" class="form-label">Email</label>
+                          <input
+                            type="email"
+                            name="email"
+                            id="email"
+                            class="form-control"
+                            required
+                            pattern="^[\w\-.]+@(stud.)?noroff.no$"
+                            title="Only the @(stud.)noroff.no domains are allowed to register."
+                          />
+                        </div>
+
+                        <!-- Password input -->
+                        <div class="form-group mb-4">
+                          <label for="password" class="form-label"
+                            >Password</label
+                          >
+                          <input
+                            type="password"
+                            name="password"
+                            class="form-control"
+                            required
+                            minlength="8"
+                          />
+                        </div>
+
+                        <div class="form-group mb-4">
+                          <label for="avatar" class="form-label">Avatar</label>
+                          <input
+                            type="url"
+                            class="form-control"
+                            id="registerAvatar"
+                            name="avatar"
+                            placeholder="Avatar URL"
+                          />
+                        </div>
+
+                        <button
+                          class="btn btn-primary-login mt-4 mb-3 ps-8 pe-8 shadow text-uppercase btn-login"
+                        >
+                          Register
+                        </button>
+
+                        <div class="card-text mb-4">
+                          Already yet a member?
+                          <a href="/login.html" style="color: #ff5ca8"
+                            >Login here!</a
+                          >
+                        </div>
+                      </form>
                     </div>
+                  </div>
                 </div>
+              </div>
             </div>
-        </section>
+          </div>
+        </div>
+      </section>
     </main>
-    
-    <footer>
 
-    </footer>
-
-</body>
-
+    <footer></footer>
+    <script src="/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="./src/js/index.mjs" type="module"></script>
+  </body>
 </html>

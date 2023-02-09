@@ -1,26 +1,32 @@
-import * as storage from '../../localStorage'
+import * as storage from '../../localStorage/localStorage.mjs';
+/**
+ * Login user
+ * @param {string} url
+ * @param {object} profile
+ * @returns
+ */
 
 const method = 'post';
 
-export async function login (url, profile) {
-    const response = await fetch (url, {
-        method,
-        headers: {
-            "Content-Type": "application/json",
-        },
-        body: JSON.stringify(profile),
-    });
+export async function login(url, profile) {
+  const response = await fetch(url, {
+    method,
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(profile),
+  });
 
-    const json = await response.json();
-    const {accessToken, ...user} = json;
+  const json = await response.json();
+  const { accessToken, ...user } = json;
 
-    if (response.ok){
-        storage.save('token', accessToken);
-        storage.save('profile', user);
-        alert('You are logged in!');
+  if (response.ok) {
+    storage.save('token', accessToken);
+    storage.save('profile', user);
 
-        window.location.replace('/profile.html');
-    } else {
-        alert('Something went wrong! Try again!');
-    };
-};
+    window.location.replace('/profile.html');
+    return response;
+  } else {
+    return false;
+  }
+}
