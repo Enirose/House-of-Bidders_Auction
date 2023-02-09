@@ -1,4 +1,4 @@
-import * as storage from "../../localStorage/localStorage.js"
+import * as storage from "../../localStorage/localStorage.mjs"
 
 
 const method =  "post";
