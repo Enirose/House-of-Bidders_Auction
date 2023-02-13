@@ -81,213 +81,60 @@
       <div class="container">
         <div class="row row-cols-md-1 row-cols-md-3 mt-2">
           <div>
-            <h1>Specific List</h1>
+            <h1>Profile</h1>
           </div>
         </div>
       </div>
-      <section style="background-color: #eee">
-        <div class="container py-5">
-          <div class="row">
-            <div class="col-lg-4">
-              <div class="card mb-4">
-                <div class="card-body text-center">
-                  <img
-                    src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava3.webp"
-                    alt="avatar"
-                    class="rounded-circle img-fluid"
-                    style="width: 150px"
-                  />
-                  <h5 class="my-3">John Smith</h5>
-                  <button
-                    class="btn btn-primary mt-3"
-                    data-bs-toggle="modal"
-                    data-bs-target="#avatar-modal"
-                  >
-                    Change User Image
-                  </button>
-                </div>
-              </div>
 
-              <div class="card mb-4 mb-lg-0">
-                <div class="card">
-                  <div class="card-body">
-                    <div class="row">
-                      <div class="col-sm-3">
-                        <p class="mb-0">Name:</p>
-                      </div>
-                      <div class="col-sm-9">
-                        <p class="text-muted mb-0">Johnatan Smith</p>
-                      </div>
-                    </div>
-                    <hr />
-                    <div class="row">
-                      <div class="col-sm-3">
-                        <p class="mb-0">Email:</p>
-                      </div>
-                      <div class="col-sm-9">
-                        <p class="text-muted mb-0">example@example.com</p>
-                      </div>
-                    </div>
-                    <hr />
-                    <div class="row">
-                      <div class="col-sm-3">
-                        <p class="mb-0">Credit:</p>
-                      </div>
-                      <div class="col-sm-9">
-                        <p class="text-muted mb-0">$ 1000 ${}</p>
-                      </div>
-                    </div>
+      <section class="vh-100" style="background-color: #f4f5f7">
+        <div class="container py-5 h-50">
+          <div
+            class="row d-flex justify-content-center align-items-center h-100"
+          >
+            <div class="col col-lg-8 mb-4 mb-lg-0">
+              <div class="card mb-3" style="border-radius: 0.5rem">
+                <div class="row g-0">
+                  <div
+                    class="col-md-4 mb-2 px-2 gradient-custom text-center text-black"
+                  >
+                    <img
+                      src="${avatar}"
+                      alt="Avatar"
+                      class="rounded-circle img-fluid my-2"
+                      style="width: 150px"
+                    />
+                    <button
+                      class="btn btn-primary mt-2"
+                      data-bs-toggle="modal"
+                      data-bs-target="#avatar-modal"
+                    >
+                      Change User Image
+                    </button>
+                    <button
+                      type="button"
+                      class="btn btn-primary mt-2"
+                      data-bs-toggle="modal"
+                      data-bs-target="#createListing-modal"
+                    >
+                      Create New listing
+                    </button>
                   </div>
-                  <button
-                    type="button"
-                    class="btn btn-primary me-auto"
-                    data-bs-toggle="modal"
-                    data-bs-target="#createListing-modal"
-                  >
-                    Create New listing
-                  </button>
-                </div>
-              </div>
-            </div>
-
-            <!-- Create auction listing
-                    <div class="col-lg-8">
-                        <div class="card mb-4">
-                            <div class="card-body">
-                                <form id="CreatePost">
-                                    <div class="form-group mb-3">
-                                        <label for="titleListing">Title</label>
-                                        <input type="text" name="title" id="title-listing" class="form-control" required>
-                                    </div>
-                                
-                                    <div class="form-group mb-3">
-                                        <label for="descriptionListing">Description</label>
-                                        <textarea name="body" class="form-control" id="description-listing" cols="30" rows="2"></textarea>
-                                    </div>
-                                
-                                    <div class="form-group mb-3">
-                                        <label for="tagsListing">Tags</label>
-                                        <input type="text" name="tags" id="tags-listing" class="form-control">
-                                    </div>
-                                
-                                    <div class="form-group mb-3">
-                                        <label for="mediaListing">Media</label>
-                                        <input type="url" name="media" id="media-listing" class="form-control">
-                                    </div>
-
-                                    <div class="form-group mb-3">
-                                        <label for="endDate">End date</label>
-                                        <input required type="datetime-local" class="form-control" id="description-endDate" name="endsAt" placeholder="end date" />
-                                    </div>
-
-                                    <button type="submit" class="btn btn-primary-login mt-4 mb-3 ps-8 pe-8 shadow text-uppercase btn-login">
-                                        Create Auction
-                                    </button>
-                                
-                                    <button type="submit" class="btn btn-success mt-4 mb-3 ps-8 pe-8 shadow text-uppercase">
-                                        Update Post
-                                    </button>
-                                    <button id="deleteBtn" class="btn btn-warning mt-4 mb-3 ps-8 pe-8 shadow text-uppercase">
-                                        Delete
-                                    </button>
-                                </form>
-                            </div>
-                        </div> -->
-
-            <!-- My auction list -->
-            <div class="col-lg-8">
-              <div class="row">
-                <div class="col-md-6">
-                  <div class="card mb-4">
-                    <div class="px-1 text-center mt-3">
-                      <h5>My Lists</h5>
-                    </div>
-                    <div class="d-flex justify-content-between p-2 px-3">
-                      <div class="d-flex flex-row align-items-center">
-                        <img
-                          src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava3.webp"
-                          alt="avatar"
-                          class="rounded-circle img-fluid"
-                          style="width: 70px"
-                        />
-                        <div class="d-flex flex-column ml-2">
-                          <span class="font-weight-bold">Jeanette Sun</span>
+                  <div class="col-md-8">
+                    <div class="card-body p-4">
+                      <h5>Hello</h5>
+                      <hr class="mt-0 mb-2" />
+                      <div class="row pt-1">
+                        <div class="col-6 mb-3">
+                          <h5 id="user-name"></h5>
+                          <h6>Credit:</h6>
+                          <p class="text-muted">$ 1000 ${}</p>
                         </div>
                       </div>
-                    </div>
-                    <img
-                      src="https://mdbcdn.b-cdn.net/img/new/standard/city/044.webp"
-                      class="card-img-top px-3"
-                      alt="..."
-                    />
-                    <div class="p-2">
-                      <p class="text-justify">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                        sed do eiusmod tempor incididunt.
+                      <h6>About me:</h6>
+                      <p>
+                        Art lover who loves to collect modern art's and canvas.
                       </p>
-                      <hr />
-                      <div
-                        class="d-flex justify-content-between align-items-center"
-                      >
-                        <p>Bidders:</p>
-                      </div>
-                    </div>
-                    <div class="card-footer">
-                      <small class="text-muted">
-                        <form action="/action_page.php">
-                          <label for="auction">Bidding Ends:</label>
-                          <input type="datetime-local" id="endBidding"
-                          class"form-control">
-                        </form>
-                      </small>
-                    </div>
-                  </div>
-                </div>
-
-                <!-- My bid lists -->
-                <div class="col-md-6">
-                  <div class="card mb-4">
-                    <div class="px-1 text-center mt-3">
-                      <h5>My Bid</h5>
-                    </div>
-                    <div class="d-flex justify-content-between p-2 px-3">
-                      <div class="d-flex flex-row align-items-center">
-                        <img
-                          src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava3.webp"
-                          alt="avatar"
-                          class="rounded-circle img-fluid"
-                          style="width: 70px"
-                        />
-                        <div class="d-flex flex-column ml-2">
-                          <span class="font-weight-bold">Jeanette Sun</span>
-                        </div>
-                      </div>
-                    </div>
-                    <img
-                      src="https://mdbcdn.b-cdn.net/img/new/standard/city/044.webp"
-                      class="card-img-top px-3"
-                      alt="..."
-                    />
-                    <div class="p-2">
-                      <p class="text-justify">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                        sed do eiusmod tempor incididunt.
-                      </p>
-                      <hr />
-                      <div
-                        class="d-flex justify-content-between align-items-center"
-                      >
-                        <p>Bidders:</p>
-                      </div>
-                    </div>
-                    <div class="card-footer">
-                      <small class="text-muted">
-                        <form action="/action_page.php">
-                          <label for="auction">Bidding Ends:</label>
-                          <input type="datetime-local" id="endBidding"
-                          class"form-control">
-                        </form>
-                      </small>
+                      <hr class="mt-0 mb-4" />
                     </div>
                   </div>
                 </div>
@@ -296,6 +143,60 @@
           </div>
         </div>
       </section>
+
+      <div id="profileContainer"></div>
+      <!-- My auction list -->
+      <div class="col-lg-8">
+        <div class="row">
+          <div class="col-md-6">
+            <div class="card mb-4">
+              <div class="px-1 text-center mt-3">
+                <h5>My Lists</h5>
+              </div>
+              <div class="d-flex justify-content-between p-2 px-3">
+                <div class="d-flex flex-row align-items-center">
+                  <img
+                    src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava3.webp"
+                    alt="avatar"
+                    class="rounded-circle img-fluid"
+                    style="width: 70px"
+                  />
+                  <div class="d-flex flex-column ml-2">
+                    <span class="font-weight-bold"></span>
+                  </div>
+                </div>
+              </div>
+              <img
+                src="https://mdbcdn.b-cdn.net/img/new/standard/city/044.webp"
+                class="card-img-top px-3"
+                alt="..."
+              />
+              <div class="p-2">
+                <p class="text-justify">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                  do eiusmod tempor incididunt.
+                </p>
+                <hr />
+                <div class="d-flex justify-content-between align-items-center">
+                  <p>Bidders:</p>
+                </div>
+              </div>
+              <div class="card-footer">
+                <small class="text-muted">
+                  <form action="/action_page.php">
+                    <label for="auction">Bidding Ends:</label>
+                    <input
+                      type="datetime-local"
+                      id="endBidding"
+                      class="form-control"
+                    />
+                  </form>
+                </small>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
 
       <!-- Modal for create listing -->
       <div
