@@ -1,10 +1,6 @@
 import { getUserPosts } from '../api/post/getUserPosts.mjs';
 import { getUserProfile } from '../api/post/getUserProfile.mjs';
-import {
-  newProfileUser,
-  replaceAvatar,
-  signOut,
-} from '../functions/functions.mjs';
+import { signOut } from '../functions/functions.mjs';
 
 export async function runProfilePage() {
   const queryString = document.location.search;
@@ -18,9 +14,6 @@ export async function runProfilePage() {
   }
   getProfile();
 
-  replaceAvatar();
-  newProfileUser();
-
   async function UserProfileData(userInfo) {
     const { name, email, avatar } = userInfo;
 
@@ -28,7 +21,7 @@ export async function runProfilePage() {
     const UserAvatar = document.querySelector('#currentAvatar');
     const UserEmail = document.querySelector('#user-email');
     // const UserBidders = document.querySelector('#bidders');
-    // const UserCredits = Document.querySelector('#profileCredit');
+    // const UserCredits = Document.querySelector('#user-credit');
 
     UserName.innerHTML = name;
     UserEmail.innerHTML = email;
