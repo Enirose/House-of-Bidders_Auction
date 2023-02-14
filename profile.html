@@ -29,7 +29,7 @@
     <header>
       <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container-fluid">
-          <a class="navbar-brand" href="#">
+          <a class="navbar-brand" href="/index.html">
             <img
               src="./img/logo.jpg"
               height="60"
@@ -51,27 +51,21 @@
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
               <li class="nav-item">
-                <a class="nav-link active" href="/index.html">Home</a>
+                <a class="nav-link" href="/index.html">Home</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" aria-current="/profile.html" href="#"
+                <a
+                  class="nav-link active"
+                  aria-current="/profile.html"
+                  id="profilePage"
+                  href="#"
                   >Profile</a
                 >
               </li>
+              <li class="nav-item">
+                <a class="nav-link" id="signOut" href="/index.html">Logout</a>
+              </li>
             </ul>
-            <div class="d-flex">
-              <button
-                type="button"
-                id="signoutBtn"
-                class="btn btn-outline-warning me-2"
-                data-bs-toggle="modal"
-                data-bs-target="#loginModal"
-                data-auth="login"
-                data-visible="loggedOut"
-              >
-                Logout
-              </button>
-            </div>
           </div>
         </div>
       </nav>
@@ -86,23 +80,24 @@
         </div>
       </div>
 
-      <section class="vh-100" style="background-color: #f4f5f7">
+      <section style="background-color: #f4f5f7">
         <div class="container py-5 h-50">
           <div
             class="row d-flex justify-content-center align-items-center h-100"
           >
             <div class="col col-lg-8 mb-4 mb-lg-0">
               <div class="card mb-3" style="border-radius: 0.5rem">
-                <div class="row g-0">
-                  <div
-                    class="col-md-4 mb-2 px-2 gradient-custom text-center text-black"
-                  >
+                <div class="row col-lg-12 g-0">
+                  <div class="row-cols-md-6 mb-2 px-2 text-center text-black">
                     <img
-                      src="${avatar}"
+                      src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava1-bg.webp"
                       alt="Avatar"
                       class="rounded-circle img-fluid my-2"
                       style="width: 150px"
+                      id="currentAvatar"
                     />
+                  </div>
+                  <div class="col-md-12 mb-2 px-2 text-center text-black">
                     <button
                       class="btn btn-primary mt-2"
                       data-bs-toggle="modal"
@@ -119,22 +114,25 @@
                       Create New listing
                     </button>
                   </div>
-                  <div class="col-md-8">
+                  <div class="col-md-12">
                     <div class="card-body p-4">
                       <h5>Hello</h5>
                       <hr class="mt-0 mb-2" />
                       <div class="row pt-1">
                         <div class="col-6 mb-3">
                           <h5 id="user-name"></h5>
+                          <p class="text-muted" id="user-email"></p>
                           <h6>Credit:</h6>
-                          <p class="text-muted">$ 1000 ${}</p>
+                          <p class="text-muted" id="profileCredit">
+                            ${credits}
+                          </p>
                         </div>
                       </div>
                       <h6>About me:</h6>
                       <p>
                         Art lover who loves to collect modern art's and canvas.
                       </p>
-                      <hr class="mt-0 mb-4" />
+                      <hr class="mt-0" />
                     </div>
                   </div>
                 </div>
@@ -144,9 +142,14 @@
         </div>
       </section>
 
-      <div id="profileContainer"></div>
+      <!-- <div id="profileContainer"></div> -->
       <!-- My auction list -->
-      <div class="col-lg-8">
+      <div class="px-1 text-center mt-3">
+        <h5>My Lists</h5>
+      </div>
+      <div id="profileContainer"></div>
+
+      <!-- <div class="col-lg-8">
         <div class="row">
           <div class="col-md-6">
             <div class="card mb-4">
@@ -178,7 +181,7 @@
                 </p>
                 <hr />
                 <div class="d-flex justify-content-between align-items-center">
-                  <p>Bidders:</p>
+                  <p id="bidders">${bidder}${_count.bid}</p>
                 </div>
               </div>
               <div class="card-footer">
@@ -196,7 +199,7 @@
             </div>
           </div>
         </div>
-      </div>
+      </div> -->
 
       <!-- Modal for create listing -->
       <div
