@@ -31,7 +31,6 @@ export async function runHomePage() {
       // }
 
       AllPostContainer.innerHTML += `
-                <div class="row-cols-1 row-cols-sm 2 row-cols-md-3 g-4 px-sm-3 px-md-4 mt-5 mb-3">
                     <div class="col">
                         <div class="card h-100">
                             <a href="list.html?id=${id}">
@@ -54,7 +53,6 @@ export async function runHomePage() {
                             </div>
                         </div>
                     </div>
-                </div>
             `;
     });
   }
