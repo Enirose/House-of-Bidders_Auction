@@ -2,6 +2,7 @@ import { registerListener } from './handlers/registerListener.mjs';
 import { loginListener } from './handlers/loginListener.mjs';
 import { runHomePage } from './handlers/HomeListener.mjs';
 import { runProfilePage } from './handlers/profileListener.mjs';
+import { runSinglePost } from './handlers/singlePostListener.mjs';
 
 const path = location.pathname;
 
@@ -13,4 +14,6 @@ if (path === '/register.html') {
   runHomePage();
 } else if (path === '/profile.html') {
   runProfilePage();
+} else if (path === '/list.html') {
+  runSinglePost();
 }

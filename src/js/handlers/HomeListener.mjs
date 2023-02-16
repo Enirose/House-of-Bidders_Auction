@@ -52,8 +52,7 @@ export async function runHomePage() {
                                 </small>
                             </div>
                         </div>
-                    </div>
-            `;
+                    </div>`;
     });
   }
   getAllPosts();
