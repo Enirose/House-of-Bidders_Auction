@@ -9,7 +9,7 @@ export async function getUserPosts(name) {
 
   const response = await fetch(UserPostUrl, {
     method,
-    header: {
+    headers: {
       'Content-type': 'application/json',
       authorization: `Bearer ${token}`,
     },

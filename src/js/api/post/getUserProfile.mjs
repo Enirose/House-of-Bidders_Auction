@@ -8,7 +8,7 @@ export async function getUserProfile(name) {
   console.log(name);
   const token = load('token');
 
-  const singleProfileUrl = `${Base_URL}${profileUrl}${name}?_listings=true`;
+  const singleProfileUrl = `${Base_URL}${profileUrl}${name}?_listings=true/credits`;
   const response = await fetch(singleProfileUrl, {
     method,
     headers: {

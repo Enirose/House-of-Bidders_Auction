@@ -1,16 +1,19 @@
+import { load } from '../localStorage/localStorage.mjs';
+
 /**
  * Fetch user
  * @returns
  */
 export function getUserInfo() {
-  const user = localStorage.getItem('user');
-  return JSON.parse(user);
+  const user = load('profile');
+  return user;
 }
 
-export function newProfileUser() {
-  const user = getUserInfo();
-  const profilePage = document.querySelector('#profilePage');
-  profilePage.href += `?name=${user.name}`;
+export function getUserName() {
+  const user = getUserInfo('profile');
+  // const profilePage = document.querySelector('#profilePage');
+  // profilePage.href += `?name= ${user.name}`;
+  return user.name;
 }
 
 /**

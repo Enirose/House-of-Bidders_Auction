@@ -1,31 +1,28 @@
 import { getUserPosts } from '../api/post/getUserPosts.mjs';
 import { getUserProfile } from '../api/post/getUserProfile.mjs';
-import { signOut } from '../functions/functions.mjs';
+import { getUserName, signOut } from '../functions/functions.mjs';
 
 export async function runProfilePage() {
-  const queryString = document.location.search;
-  const params = new URLSearchParams(queryString);
-  let name = params.get('name');
-
   // Fetching user's Profile from API
   async function getProfile() {
-    const postData = await getUserProfile(name);
+    const userInfo = getUserName();
+    const postData = await getUserProfile(userInfo);
     UserProfileData(postData);
   }
   getProfile();
 
   async function UserProfileData(userInfo) {
-    const { name, email, avatar } = userInfo;
+    const { name, email, avatar, credits } = userInfo;
 
     const UserName = document.querySelector('#user-name');
     const UserAvatar = document.querySelector('#currentAvatar');
     const UserEmail = document.querySelector('#user-email');
     // const UserBidders = document.querySelector('#bidders');
-    // const UserCredits = Document.querySelector('#user-credit');
+    const UserCredits = document.querySelector('#user-credits');
 
     UserName.innerHTML = name;
     UserEmail.innerHTML = email;
-    // UserCredits.innerHTML = credits;
+    UserCredits.innerHTML = credits;
 
     if (avatar != null && avatar != '') {
       UserAvatar.src = avatar;
@@ -41,6 +38,7 @@ export async function runProfilePage() {
 
   // Fetching / getting user's post by name
   async function buildUserProfileHTML() {
+    const name = getUserName();
     const postInfo = await getUserPosts(name);
 
     const UserSinglePost = document.querySelector('#profileContainer');
