@@ -1,4 +1,6 @@
 import { getPostId } from '../api/post/getSinglePostById.mjs';
+import { getUserProfile } from '../api/post/getUserProfile.mjs';
+import { getUserName } from '../functions/functions.mjs';
 
 export async function runSinglePost() {
   const querySelector = document.location.search;
@@ -12,9 +14,28 @@ export async function runSinglePost() {
     buildSinglePostHTML(singlePost);
   }
 
+  // Fetching/ getting logged in user's info
+  async function getProfile() {
+    const userInfo = getUserName();
+    const userData = await getUserProfile(userInfo);
+    userProfileData(userData);
+  }
+  getProfile();
+
+  // display logged in user info
+  async function userProfileData(userInfo) {
+    const { credits } = userInfo;
+    console.log(credits);
+    const UserCredits = document.querySelector('#User_Credits');
+
+    UserCredits.innerHTML = credits;
+  }
+
+  // Fetching user's post by name, email, descriptions, media etc.
+
   function buildSinglePostHTML(post) {
     const singleContainer = document.querySelector('#singleContainer');
-    const { title, name, description, media, credits } = post;
+    const { title, seller, description, media, credits } = post;
 
     singleContainer.innerHTML = '';
 
@@ -50,9 +71,7 @@ export async function runSinglePost() {
                       <hr class="mt-0 mb-2" />
                       <div class="row pt-1">
                         <div class="col-6 mb-2">
-                          <h5>${name}</h5>
-                          <h6>Credit:</h6>
-                          <p class="text-muted">$${credits}</p>
+                          <h5>${seller.name}</h5>
                         </div>
                         <div class="col-6 mb-2">
                           <p alt="Avatar"
@@ -75,6 +94,8 @@ export async function runSinglePost() {
                         </div>
                       </div>
                       <form action="mt-4">
+                        <h6>Your credits:</h6>
+                        <p class="text-muted" id="User_Credits">${credits}</p>
                         <input
                           type="number"
                           placeholder="Place your bid"
