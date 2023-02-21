@@ -1,3 +1,4 @@
+import { createpost } from '../api/post/createPost.mjs';
 import { getUserPosts } from '../api/post/getUserPosts.mjs';
 import { getUserProfile } from '../api/post/getUserProfile.mjs';
 import { getUserName, signOut } from '../functions/functions.mjs';
@@ -12,12 +13,12 @@ export async function runProfilePage() {
   getProfile();
 
   async function UserProfileData(userInfo) {
-    const { name, email, avatar, credits } = userInfo;
+    const { name, email, avatar, credits, _count } = userInfo;
 
     const UserName = document.querySelector('#user-name');
     const UserAvatar = document.querySelector('#currentAvatar');
     const UserEmail = document.querySelector('#user-email');
-    // const UserBidders = document.querySelector('#bidders');
+    const UserBidders = document.querySelector('#bidders');
     const UserCredits = document.querySelector('#user-credits');
 
     UserName.innerHTML = name;
@@ -28,12 +29,12 @@ export async function runProfilePage() {
       UserAvatar.src = avatar;
     }
 
-    // let biddertext = 'Bidder';
-    // if (_count.bid > 1 || _count.bid === 0) {
-    //   biddertext += 's';
-    // }
+    let biddertext = 'Bidder';
+    if (_count.bid > 1 || _count.bid === 0) {
+      biddertext += 's';
+    }
 
-    // UserBidders.innerHTML = `${biddertext}${_count.bid}`;
+    UserBidders.innerHTML = `${biddertext}: ${_count.bid}`;
   }
 
   // Fetching / getting user's post by name
@@ -45,7 +46,7 @@ export async function runProfilePage() {
     UserSinglePost.innerHTML = '';
 
     postInfo.forEach(function (post) {
-      const { id, title, description, media } = post;
+      const { id, title, description, media, endsAt, _count } = post;
 
       let img = '';
       if (media != '' && media != null) {
@@ -57,40 +58,56 @@ export async function runProfilePage() {
       }
 
       UserSinglePost.innerHTML += `
-                <div class="row">
-                    <div class="col-md-6">
-                        <div class="card mb-4">
+                    <div class="col d-flex justify-content-center">
+                        <div class="card h-100">
                             <a href="list.html?id=${id}">
                                 <p class="mt-3 mb-4 pb-2">${img}</p>
                             </a>
-                            <div class="p-2">
+                            <div class="card-body">
                                 <h5 class="card-title">${title}</h5>
-                                <p class="text-justify">
+                                <p class="card-text">
                                 ${description}
                                 </p>
                                 <hr />
-                                <div class="d-flex justify-content-between align-items-center">
-                                    <p id="bidders"></p>
-                                </div>
+                                <h6>Bids: ${_count}</h6>
                             </div>
                             <div class="card-footer">
                                 <small class="text-muted">
-                                    <form action="/action_page.php">
-                                        <label for="auction">Bidding Ends:</label>
-                                        <input
-                                        type="datetime-local"
-                                        id="endBidding"
-                                        class="form-control"
-                                        />
-                                    </form>
+                                <p id='ending'>Ends at ${endsAt}</p>
                                 </small>
                             </div>
                         </div>
-                    </div>
-                </div>`;
+                    </div>`;
     });
   }
   buildUserProfileHTML();
+
+  async function createFormListener() {
+    const form = document.querySelector('#create-listing');
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const form = e.target;
+      const title = form.title.value;
+      const description = form.description.value;
+      const tags = form.tags.value;
+      const media = form.media.value;
+      const endsAt = form.endsAt.value;
+      const profile = {
+        title: title,
+        description: description,
+        tags: tags,
+        media: media,
+        endsAt: endsAt,
+      };
+      profile.tags = profile.tags.split(',');
+      profile.media = profile.media.split(',');
+
+      createpost(profile);
+      buildUserProfileHTML();
+    });
+  }
+  createFormListener();
 
   const logout = document.querySelector('#signOut');
   logout.onclick = signOut;

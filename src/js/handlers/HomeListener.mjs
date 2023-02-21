@@ -14,7 +14,7 @@ export async function runHomePage() {
     AllPostContainer.innerHTML = '';
 
     posts.forEach(function (post) {
-      const { id, title, media, description, _count } = post;
+      const { id, title, media, description, endsAt, _count } = post;
 
       let img = '';
       if (media !== '' && media != null) {
@@ -26,7 +26,7 @@ export async function runHomePage() {
       }
 
       // let avatar = '';
-      // if (seller.avatar !== '' && seller.avatar != null) {
+      // if (seller.avatar !== '' && seller.avatar != null) {s
       //   avatar = seller.avatar;
       // }
 
@@ -41,14 +41,11 @@ export async function runHomePage() {
                                 <p class="card-text">
                                 ${description}
                                 </p>
+                                <h6>Bids: ${_count}</h6>
                             </div>
                             <div class="card-footer">
                                 <small class="text-muted">
-                                <form action="/action_page.php">
-                                    <label for="auction">Bidding Ends: ${_count}</label>
-                                    <input type="datetime-local" id="endBidding"
-                                    class"form-control">
-                                </form>
+                                <p id='ending'>Ends at ${endsAt}</p>
                                 </small>
                             </div>
                         </div>

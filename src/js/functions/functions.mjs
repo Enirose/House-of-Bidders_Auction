@@ -37,3 +37,16 @@ export function signOut() {
   localStorage.removeItem('credits');
   window.location.replace8('/login.html');
 }
+
+// Formatted countDown timer
+// export function endDate(timer) {
+//   const date = new Date(timer.endsAt);
+//   const options = {
+//     weekday: 'long',
+//     year: 'numeric',
+//     month: 'long',
+//     day: 'numeric',
+//   };
+//   const formmattedDate = date.toLocaleDateString('en-GB', options);
+//   document.querySelector('#ending').innerHTML = formmattedDate;
+// }

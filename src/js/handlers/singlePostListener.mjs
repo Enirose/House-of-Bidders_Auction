@@ -35,7 +35,7 @@ export async function runSinglePost() {
 
   function buildSinglePostHTML(post) {
     const singleContainer = document.querySelector('#singleContainer');
-    const { title, seller, description, media, credits } = post;
+    const { title, seller, description, media, credits, endsAt } = post;
 
     singleContainer.innerHTML = '';
 
@@ -59,7 +59,7 @@ export async function runSinglePost() {
                     <div class="card-footer">
                     <small class="text-muted">
                       <form>
-                        <label for="auction">Bidding Ends:</label>
+                        <label for="auction">Bidding Ends: ${endsAt}</label>
                         <input type="datetime-local" id="endBidding"
                           class"form-control">
                       </form>
