@@ -13,12 +13,12 @@ export async function runProfilePage() {
   getProfile();
 
   async function UserProfileData(userInfo) {
-    const { name, email, avatar, credits, _count } = userInfo;
+    const { name, email, avatar, credits } = userInfo;
 
     const UserName = document.querySelector('#user-name');
     const UserAvatar = document.querySelector('#currentAvatar');
     const UserEmail = document.querySelector('#user-email');
-    const UserBidders = document.querySelector('#bidders');
+    // const UserBidders = document.querySelector('#bidders');
     const UserCredits = document.querySelector('#user-credits');
 
     UserName.innerHTML = name;
@@ -29,12 +29,12 @@ export async function runProfilePage() {
       UserAvatar.src = avatar;
     }
 
-    let biddertext = 'Bidder';
-    if (_count.bid > 1 || _count.bid === 0) {
-      biddertext += 's';
-    }
+    // let biddertext = 'Bidder';
+    // if (_count.bid > 1 || _count.bid === 0) {
+    //   biddertext += 's';
+    // }
 
-    UserBidders.innerHTML = `${biddertext}: ${_count.bid}`;
+    // UserBidders.innerHTML = `${biddertext}: ${_count.bid}`;
   }
 
   // Fetching / getting user's post by name
@@ -58,8 +58,8 @@ export async function runProfilePage() {
       }
 
       UserSinglePost.innerHTML += `
-                    <div class="col d-flex justify-content-center">
-                        <div class="card h-100">
+                    <div class="col vh-100">
+                        <div class="card">
                             <a href="list.html?id=${id}">
                                 <p class="mt-3 mb-4 pb-2">${img}</p>
                             </a>
@@ -90,21 +90,17 @@ export async function runProfilePage() {
       const form = e.target;
       const title = form.title.value;
       const description = form.description.value;
-      const tags = form.tags.value;
       const media = form.media.value;
       const endsAt = form.endsAt.value;
-      const profile = {
+      const post = {
         title: title,
         description: description,
-        tags: tags,
         media: media,
         endsAt: endsAt,
       };
-      profile.tags = profile.tags.split(',');
-      profile.media = profile.media.split(',');
+      post.media = post.media.split(',');
 
-      createpost(profile);
-      buildUserProfileHTML();
+      createpost(post);
     });
   }
   createFormListener();

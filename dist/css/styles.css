@@ -10772,6 +10772,13 @@ h5,
   color: #8165ca;
 }
 
+#footer {
+  background-color: #8165ca;
+  font-weight: bold;
+  color: white;
+  bottom: 0;
+}
+
 h1, .h1,
 h2,
 .h2,
@@ -10784,6 +10791,13 @@ h5,
 .h1 {
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
   color: #8165ca;
+}
+
+#footer {
+  background-color: #8165ca;
+  font-weight: bold;
+  color: white;
+  bottom: 0;
 }
 
 .carousel-inner {

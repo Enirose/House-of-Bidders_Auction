@@ -85,8 +85,8 @@
           <div
             class="row d-flex justify-content-center align-items-center h-100"
           >
-            <div class="col col-lg-8 mb-4 mb-lg-0">
-              <div class="card mb-3" style="border-radius: 0.5rem">
+            <div class="col col-lg-4 col-md-45mb-4 mb-lg-0">
+              <div class="card mb-3" style="border-radius: 1.5rem">
                 <div class="row col-lg-12 g-0">
                   <div class="row-cols-md-6 mb-2 px-2 text-center text-black">
                     <img
@@ -136,21 +136,107 @@
                 </div>
               </div>
             </div>
+
+            <div class="col-lg-4 col-md-5">
+              <div class="card" style="border-radius: 1.5rem">
+                <form id="create-listing">
+                  <div class="container">
+                    <div class="btn-primary">
+                      <h2 class="text-center mt-5 text-white">CREATE A LIST</h2>
+                    </div>
+                    <hr />
+                    <div class="row justify-content-center">
+                      <div class="col-lg-10">
+                        <div class="row">
+                          <div class="col-md-12">
+                            <label for="title">Title</label>
+                            <input
+                              required
+                              type="text"
+                              id="title"
+                              name="title"
+                              placeholder="What do you want to sell?"
+                              class="form-control"
+                            />
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col-md-12">
+                            <label for="description">Description</label>
+                            <textarea
+                              required
+                              class="form-control"
+                              id="description"
+                              name="description"
+                              placeholder="Tell us something about your product..."
+                            ></textarea>
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col-md-12">
+                            <label for="media">Media URL</label>
+                            <input
+                              name="media"
+                              type="url"
+                              class="form-control"
+                              id="media"
+                              placeholder="Place an image URL"
+                            />
+                          </div>
+                        </div>
+
+                        <div class="row">
+                          <div class="col-md-12">
+                            <label for="auction">Select time and date:</label>
+                            <form action="/action_page.php">
+                              <input
+                                required
+                                name="endsAt"
+                                placeholder="end date"
+                                class="form-control"
+                                id="endBid"
+                                type="datetime-local"
+                              />
+                            </form>
+                          </div>
+                        </div>
+
+                        <div class="row">
+                          <div class="col-12 text-center mb-5">
+                            <button
+                              class="btn btn-secondary px-5 mt-5"
+                              id="submit-button-for-listings"
+                            >
+                              POST
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
       <!-- <div id="profileContainer"></div> -->
       <!-- My auction list -->
-      <div class="px-1 text-center mt-3">
-        <h5>My Lists</h5>
-      </div>
-      <div
-        id="profileContainer"
-        class="row row-cols-1 row-cols-md-3 row-cols-lg-4 g-4 mt-3 px-5"
-      ></div>
+      <section class="container">
+        <div class="px-1 text-center mt-3">
+          <h5>My Lists</h5>
+        </div>
+        <div
+          id="profileContainer"
+          class="row row-cols-1 row-cols-md-3 row-cols-lg-4 g-4 mt-3 px-5"
+        ></div>
+        <div class="text-center py-3 mt-5 pb-2 m-5" id="footer">
+          Copyright &copy; 2023 || House of Bidders ||
+        </div>
+      </section>
 
-      <!-- Modal for create listing -->
+      <!-- Modal for create listing
       <div
         class="modal fade"
         id="createListing-modal"
@@ -236,7 +322,7 @@
             </div>
           </form>
         </div>
-      </div>
+      </div> -->
 
       <!-- Modal for Channge avatar -->
       <div
@@ -264,9 +350,11 @@
                   type="url"
                   class="form-control avatar-input"
                   name="avatar"
+                  id="avatarURL"
                   placeholder="avatar image URL"
                 />
                 <label for="avatarImage">User image</label>
+                <p id="errorMessage"></p>
               </div>
             </div>
             <div class="modal-footer">

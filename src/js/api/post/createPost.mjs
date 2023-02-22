@@ -16,7 +16,12 @@ export async function createpost() {
     },
     body: JSON.stringify(),
   });
+
   const postResult = await response.json();
   console.log(postResult);
-  return postResult;
+  if (response.ok) {
+    return postResult;
+  } else {
+    alert('Something went wrong!');
+  }
 }
