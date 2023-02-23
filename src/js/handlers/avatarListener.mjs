@@ -1,17 +1,14 @@
 import { updateAvatar } from '../api/post/updateAvatar.mjs';
 
 export async function avatarListener() {
-  const avatarUrl = document.querySelector('#avatar-image');
-  const updateAvatarBTN = document.querySelector('#updateBtn');
+  const avatarForm = document.querySelector('#avatar-image');
 
-  updateAvatarBTN.addEventListener('submit', (e) => {
+  avatarForm.addEventListener('submit', (e) => {
     e.preventDefault();
-    const inputAvatarUrl = avatarUrl.value.trim();
+    const avatarForm = e.target;
+    const formData = new FormData(avatarForm);
+    const avatar = Object.fromEntries(formData.entries());
 
-    let avatarInfo = {
-      avatar: inputAvatarUrl,
-    };
-
-    updateAvatar(avatarInfo);
+    updateAvatar(avatar);
   });
 }

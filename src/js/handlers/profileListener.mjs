@@ -57,7 +57,7 @@ export async function runProfilePage() {
       }
 
       UserSinglePost.innerHTML += `
-                    <div class="col vh-100">
+                    <div class="col">
                         <div class="card">
                             <a href="list.html?id=${id}">
                                 <p class="mt-3 mb-4 pb-2">${img}</p>

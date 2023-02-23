@@ -1,11 +1,11 @@
-import { getUserInfo } from '../../functions/functions.mjs';
+import { getUserName } from '../../functions/functions.mjs';
 import { load } from '../../localStorage/localStorage.mjs';
 import { Base_URL } from '../auth/constants.mjs';
 
 const method = 'put';
 const avatarUrl = `profiles/`;
 const errormsg = document.querySelector('#errorMessage');
-const name = await getUserInfo();
+const name = await getUserName('profile');
 
 /**
  * User update avatar on profile page
@@ -28,6 +28,7 @@ export async function updateAvatar(avatarData) {
     });
 
     const result = await response.json();
+    window.location.reload();
 
     if (result.statusCode) {
       errormsg.innerHTML = 'Invalid image URL. Please enter valid Url!';
