@@ -1,11 +1,11 @@
-import { getUserName } from '../../functions/functions.mjs';
+import { getUserInfo } from '../../functions/functions.mjs';
 import { load } from '../../localStorage/localStorage.mjs';
 import { Base_URL } from '../auth/constants.mjs';
 
 const method = 'put';
 const avatarUrl = `profiles/`;
 const errormsg = document.querySelector('#errorMessage');
-const name = await getUserName();
+const name = await getUserInfo();
 
 /**
  * User update avatar on profile page
