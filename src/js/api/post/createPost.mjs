@@ -4,7 +4,7 @@ import { Base_URL } from '../auth/constants.mjs';
 const method = 'post';
 const createUrl = `listings`;
 
-export async function createpost() {
+export async function createpost(listingData) {
   const token = load('token');
   const createPostUrl = `${Base_URL}${createUrl}`;
 
@@ -14,12 +14,13 @@ export async function createpost() {
       'Content-Type': 'application/json',
       Authorization: `Bearer ${token}`,
     },
-    body: JSON.stringify(),
+    body: JSON.stringify(listingData),
   });
 
   const postResult = await response.json();
-  console.log(postResult);
+
   if (response.ok) {
+    window.location.reload();
     return postResult;
   } else {
     alert('Something went wrong!');

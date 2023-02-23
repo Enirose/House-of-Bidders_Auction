@@ -85,7 +85,7 @@
           <div
             class="row d-flex justify-content-center align-items-center h-100"
           >
-            <div class="col col-lg-4 col-md-45mb-4 mb-lg-0">
+            <div class="col col-lg-8 col-md-12 mb-4 mb-lg-0">
               <div class="card mb-3" style="border-radius: 1.5rem">
                 <div class="row col-lg-12 g-0">
                   <div class="row-cols-md-6 mb-2 px-2 text-center text-black">
@@ -136,87 +136,6 @@
                 </div>
               </div>
             </div>
-
-            <div class="col-lg-4 col-md-5">
-              <div class="card" style="border-radius: 1.5rem">
-                <form id="create-listing">
-                  <div class="container">
-                    <div class="btn-primary">
-                      <h2 class="text-center mt-5 text-white">CREATE A LIST</h2>
-                    </div>
-                    <hr />
-                    <div class="row justify-content-center">
-                      <div class="col-lg-10">
-                        <div class="row">
-                          <div class="col-md-12">
-                            <label for="title">Title</label>
-                            <input
-                              required
-                              type="text"
-                              id="title"
-                              name="title"
-                              placeholder="What do you want to sell?"
-                              class="form-control"
-                            />
-                          </div>
-                        </div>
-                        <div class="row">
-                          <div class="col-md-12">
-                            <label for="description">Description</label>
-                            <textarea
-                              required
-                              class="form-control"
-                              id="description"
-                              name="description"
-                              placeholder="Tell us something about your product..."
-                            ></textarea>
-                          </div>
-                        </div>
-                        <div class="row">
-                          <div class="col-md-12">
-                            <label for="media">Media URL</label>
-                            <input
-                              name="media"
-                              type="url"
-                              class="form-control"
-                              id="media"
-                              placeholder="Place an image URL"
-                            />
-                          </div>
-                        </div>
-
-                        <div class="row">
-                          <div class="col-md-12">
-                            <label for="auction">Select time and date:</label>
-                            <form action="/action_page.php">
-                              <input
-                                required
-                                name="endsAt"
-                                placeholder="end date"
-                                class="form-control"
-                                id="endBid"
-                                type="datetime-local"
-                              />
-                            </form>
-                          </div>
-                        </div>
-
-                        <div class="row">
-                          <div class="col-12 text-center mb-5">
-                            <button
-                              class="btn btn-secondary px-5 mt-5"
-                              id="submit-button-for-listings"
-                            >
-                              POST
-                            </button>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </form>
-              </div>
-            </div>
           </div>
         </div>
       </section>
@@ -236,7 +155,7 @@
         </div>
       </section>
 
-      <!-- Modal for create listing
+      Modal for create listing
       <div
         class="modal fade"
         id="createListing-modal"
@@ -281,16 +200,6 @@
               </div>
               <div class="form-floating mb-3">
                 <input
-                  type="text"
-                  class="form-control"
-                  id="tags-listing"
-                  name="tags"
-                  placeholder="tags"
-                />
-                <label for="tags">Tags</label>
-              </div>
-              <div class="form-floating mb-3">
-                <input
                   required
                   type="url"
                   class="form-control"
@@ -298,7 +207,7 @@
                   name="media"
                   placeholder="listing image URL"
                 />
-                <label for="listingImage">Listing image</label>
+                <label for="listingImage">Listing image URL</label>
               </div>
               <div class="form-floating mb-3">
                 <input
@@ -322,7 +231,7 @@
             </div>
           </form>
         </div>
-      </div> -->
+      </div>
 
       <!-- Modal for Channge avatar -->
       <div

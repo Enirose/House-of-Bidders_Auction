@@ -1,4 +1,3 @@
-import { createpost } from '../api/post/createPost.mjs';
 import { getUserPosts } from '../api/post/getUserPosts.mjs';
 import { getUserProfile } from '../api/post/getUserProfile.mjs';
 import { getUserName, signOut } from '../functions/functions.mjs';
@@ -81,29 +80,6 @@ export async function runProfilePage() {
     });
   }
   buildUserProfileHTML();
-
-  async function createFormListener() {
-    const form = document.querySelector('#create-listing');
-
-    form.addEventListener('submit', async (e) => {
-      e.preventDefault();
-      const form = e.target;
-      const title = form.title.value;
-      const description = form.description.value;
-      const media = form.media.value;
-      const endsAt = form.endsAt.value;
-      const post = {
-        title: title,
-        description: description,
-        media: media,
-        endsAt: endsAt,
-      };
-      post.media = post.media.split(',');
-
-      createpost(post);
-    });
-  }
-  createFormListener();
 
   const logout = document.querySelector('#signOut');
   logout.onclick = signOut;
