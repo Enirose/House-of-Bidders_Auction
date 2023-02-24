@@ -5,7 +5,6 @@ import { Base_URL } from '../auth/constants.mjs';
 const method = 'put';
 const avatarUrl = `profiles/`;
 const errormsg = document.querySelector('#errorMessage');
-const name = await getUserName('profile');
 
 /**
  * User update avatar on profile page
@@ -15,6 +14,7 @@ const name = await getUserName('profile');
 export async function updateAvatar(avatarData) {
   try {
     const token = load('token');
+    const name = await getUserName('profile');
 
     const updateAvatarUrl = `${Base_URL}${avatarUrl}${name}/media`;
 
