@@ -23,6 +23,6 @@ export async function createpost(listingData) {
     window.location.reload();
     return postResult;
   } else {
-    alert('Something went wrong!');
+    alert('Please use URL with publicly accessible images !');
   }
 }

@@ -53,12 +53,13 @@ export async function runProfilePage() {
                     src="${media}"
                     class="card-img-top"
                     alt="Bid image"
+                    style="width: 100%; height: 20vh; object-fit:cover"
                     />`;
       }
 
       UserSinglePost.innerHTML += `
                     <div class="col">
-                        <div class="card">
+                        <div class="card h-100">
                             <a href="list.html?id=${id}">
                                 <p class="mt-3 mb-4 pb-2">${img}</p>
                             </a>

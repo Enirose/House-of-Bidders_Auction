@@ -93,18 +93,20 @@ export async function runSinglePost() {
                           <p class="text-muted">Dolor sit amet</p>
                         </div>
                       </div>
-                      <form action="mt-4">
+                      <form action="mt-4" id="bid_Form">
                         <h6>Your credits:</h6>
                         <p class="text-muted" id="User_Credits">${credits}</p>
-                        <input
-                          type="number"
-                          placeholder="Place your bid"
-                          class="form-control me-2 w-40"
-                          min="125"
-                        />
-                        <button type="button" class="btn btn-primary mb-2">
-                          Place Bid
-                        </button>
+                        <div class="input-group">
+                          <input
+                            type="number"
+                            placeholder="Place your bid"
+                            class="form-control me-2 w-40"
+                            min="125"
+                          />
+                          <button type="button" id="bid_Btn" class="btn btn-primary me-2">
+                            Place Bid
+                          </button>
+                        </div>
                       </form>
                       
                     </div>
