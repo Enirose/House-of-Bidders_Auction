@@ -35,7 +35,7 @@ export async function runSinglePost() {
 
   function buildSinglePostHTML(post) {
     const singleContainer = document.querySelector('#singleContainer');
-    const { title, seller, description, media, credits, endsAt } = post;
+    const { title, seller, description, media, endsAt, bids, _count } = post;
 
     singleContainer.innerHTML = '';
 
@@ -86,16 +86,24 @@ export async function runSinglePost() {
                       <div class="row pt-1">
                         <div class="col-6 mb-1">
                           <h6>Bidder</h6>
-                          <p class="text-muted">Lorem ipsum</p>
+                          <p class="text-muted">${bids.biddername}</p>
                         </div>
                         <div class="col-6 mb-3">
                           <h6>Highest Bid</h6>
-                          <p class="text-muted">Dolor sit amet</p>
+                          <p class="text-muted">${bids.amount}</p>
                         </div>
                       </div>
                       <form action="mt-4" id="bid_Form">
-                        <h6>Your credits:</h6>
-                        <p class="text-muted" id="User_Credits">${credits}</p>
+                        <div class="row pt-1">
+                          <div class="col-6 mb-1">
+                            <h6>Total bidders</h6>
+                            <p class="text-muted">${_count.bids}</p>
+                          </div>
+                          <div class="col-6 mb-3">
+                            <h6>Your credits:</h6>
+                            <p class="text-muted" id="User_Credits"></p>
+                          </div>
+                        </div>
                         <div class="input-group">
                           <input
                             type="number"
