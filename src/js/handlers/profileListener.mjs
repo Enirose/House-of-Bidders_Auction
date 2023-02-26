@@ -69,7 +69,7 @@ export async function runProfilePage() {
                                 ${description}
                                 </p>
                                 <hr />
-                                <h6>Bids: ${_count}</h6>
+                                <h6>Bids: ${_count.bids}</h6>
                             </div>
                             <div class="card-footer">
                                 <small class="text-muted">

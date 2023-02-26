@@ -1,6 +1,7 @@
 import { getPostId } from '../api/post/getSinglePostById.mjs';
 import { getUserProfile } from '../api/post/getUserProfile.mjs';
 import { getUserName } from '../functions/functions.mjs';
+import { createBidListener } from './createBidListener.mjs';
 
 export async function runSinglePost() {
   const querySelector = document.location.search;
@@ -34,10 +35,10 @@ export async function runSinglePost() {
   // Fetching user's post by name, email, descriptions, media etc.
 
   function buildSinglePostHTML(post) {
-    const singleContainer = document.querySelector('#singleContainer');
+    // const singleContainer = document.querySelector('#singleContainer');
     const { title, seller, description, media, endsAt, bids, _count } = post;
 
-    singleContainer.innerHTML = '';
+    // singleContainer.innerHTML = '';
 
     // check if user has a media to display
     let img = '';
@@ -49,79 +50,61 @@ export async function runSinglePost() {
                 />`;
     }
 
-    singleContainer.innerHTML += `<div class="col col-lg-8 mb-4 mb-lg-0">
-              <div class="card mb-3" style="border-radius: 0.5rem">
-                <div class="row g-0">
-                  <div
-                    class="col-md-4 px-2 gradient-custom text-center text-black"
-                  >
-                    <p class="text-muted">${img}</p>
-                    <div class="card-footer">
-                    <small class="text-muted">
-                      <form>
-                        <label for="auction">Bidding Ends: ${endsAt}</label>
-                        <input type="datetime-local" id="endBidding"
-                          class"form-control">
-                      </form>
-                    </small>
-                  </div>
-                  </div>
-                  <div class="col-md-8">
-                    <div class="card-body p-4">
-                      <hr class="mt-0 mb-2" />
-                      <div class="row pt-1">
-                        <div class="col-6 mb-2">
-                          <h5>${seller.name}</h5>
-                        </div>
-                        <div class="col-6 mb-2">
-                          <p alt="Avatar"
-                            class="rounded-circle img-fluid my-2"
-                            style="width: 70px">
-                          </p>
-                        </div>
-                      </div>
-                      <h6>${title}</h6>
-                      <p>${description}</p>
-                      <hr class="mt-0 mb-2" />
-                      <div class="row pt-1">
-                        <div class="col-6 mb-1">
-                          <h6>Bidder</h6>
-                          <p class="text-muted">${bids.biddername}</p>
-                        </div>
-                        <div class="col-6 mb-3">
-                          <h6>Highest Bid</h6>
-                          <p class="text-muted">${bids.amount}</p>
-                        </div>
-                      </div>
-                      <form action="mt-4" id="bid_Form">
-                        <div class="row pt-1">
-                          <div class="col-6 mb-1">
-                            <h6>Total bidders</h6>
-                            <p class="text-muted">${_count.bids}</p>
-                          </div>
-                          <div class="col-6 mb-3">
-                            <h6>Your credits:</h6>
-                            <p class="text-muted" id="User_Credits"></p>
-                          </div>
-                        </div>
-                        <div class="input-group">
-                          <input
-                            type="number"
-                            placeholder="Place your bid"
-                            class="form-control me-2 w-40"
-                            min="125"
-                          />
-                          <button type="button" id="bid_Btn" class="btn btn-primary me-2">
-                            Place Bid
-                          </button>
-                        </div>
-                      </form>
-                      
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>`;
+    const finalDate = new Date(endsAt).toLocaleDateString('en-us', {
+      weekday: 'long',
+      year: 'numeric',
+      month: 'long',
+      day: 'numeric',
+    });
+
+    console.log(post);
+
+    document.querySelector('#auctionDescription').innerText =
+      description || 'N/A';
+    document.querySelector('#sellersName').innerText = seller.name || 'N/A';
+    document.querySelector('#bid_count').innerText = _count.bids || 'N/A';
+    document.querySelector('#sellersName').innerText = seller.name || 'N/A';
+    document.querySelector('#endingDate').innerText = finalDate;
+    document.querySelector('#auctionImg').innerHTML = img;
+    document.querySelector('#auctionTitle').innerText = title || 'N/A';
+
+    let highestBid = {
+      amount: 0,
+      bidder: 'N/A',
+    };
+
+    // const sortedBids = bids.sort((a, b) => {
+    //   if (a.amount > b.amount) return -1;
+    //   if (a.amount < b.amount) return 1;
+    //   else return 0;
+    // });
+
+    bids.forEach((bid) => {
+      if (bid.amount > highestBid.amount) {
+        highestBid.amount = bid.amount;
+        highestBid.bidder = bid.bidderName;
+      }
+    });
+
+    document.querySelector('#bidderName').innerText = highestBid.bidder; //sortedBids[0].bidderName; //
+    document.querySelector('#highest_bid').innerText = highestBid.amount; //sortedBids[0].amount;
+
+    createBidListener();
+
+    // singleContainer.innerHTML += ``;
   }
+
+  // const button = document.querySelector('#bid_Btn');
+  // document.querySelector('#bidderName').innerText = bids.bidderName;
+  // const highestBid = document.querySelector('#highest_bid');
+  // document.querySelector('#bid_count').innerText = _count.bids;
+  // document.querySelector('#bid_count').innerText = _count.bids;
+  // document.querySelector('#bid_count').innerText = _count.bids;
+
+  // button.addEventListener('click', () => {
+  //   console.log('SUP');
+  // });
+
   getSinglePost();
+  createBidListener();
 }

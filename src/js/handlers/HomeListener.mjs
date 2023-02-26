@@ -25,6 +25,13 @@ export async function runHomePage() {
                 />`;
       }
 
+      const finalDate = new Date(endsAt).toLocaleDateString('en-us', {
+        weekday: 'long',
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric',
+      });
+
       // let avatar = '';
       // if (seller.avatar !== '' && seller.avatar != null) {s
       //   avatar = seller.avatar;
@@ -41,11 +48,11 @@ export async function runHomePage() {
                                 <p class="card-text">
                                 ${description}
                                 </p>
-                                <h6>Bids: ${_count}</h6>
+                                <h6>Bids: ${_count.bids}</h6>
                             </div>
                             <div class="card-footer">
                                 <small class="text-muted">
-                                <p id='ending'>Ends at ${endsAt}</p>
+                                <p id='ending'>Ends at ${finalDate}</p>
                                 </small>
                             </div>
                         </div>

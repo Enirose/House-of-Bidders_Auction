@@ -1,7 +1,7 @@
 import { CreateBid } from '../api/post/createBid.mjs';
 
 export async function createBidListener() {
-  const bidBtn = document.querySelector('#bid_btn');
+  const bidBtn = document.querySelector('#bid_Btn');
 
   bidBtn.addEventListener('click', (e) => {
     e.preventDefault();
