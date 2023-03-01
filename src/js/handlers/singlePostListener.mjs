@@ -1,9 +1,14 @@
 import { getPostId } from '../api/post/getSinglePostById.mjs';
 import { getUserProfile } from '../api/post/getUserProfile.mjs';
-import { getUserName } from '../functions/functions.mjs';
+import { getUserInfo, getUserName } from '../functions/functions.mjs';
 import { createBidListener } from './createBidListener.mjs';
 
 export async function runSinglePost() {
+  const signedInUser = getUserInfo('accessToken');
+  if (!signedInUser) {
+    window.location.replace('/login.html');
+  }
+
   const querySelector = document.location.search;
   const params = new URLSearchParams(querySelector);
   let id = params.get('id');

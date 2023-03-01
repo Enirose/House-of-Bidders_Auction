@@ -1,7 +1,16 @@
 import { getPosts } from '../api/post/getAllList.mjs';
-import { signOut } from '../functions/functions.mjs';
+import { getUserInfo, signOut } from '../functions/functions.mjs';
 
 export async function runHomePage() {
+  const signedInUser = getUserInfo('accessToken');
+  if (!signedInUser) {
+    const navButton = document.querySelector('#navBtn');
+    navButton.remove();
+  } else {
+    const loggedIn = document.querySelector('#loggedInBtn');
+    loggedIn.remove();
+  }
+
   async function getAllPosts() {
     userPosts = await getPosts();
     buildPostContainer(userPosts);
@@ -14,7 +23,7 @@ export async function runHomePage() {
     AllPostContainer.innerHTML = '';
 
     posts.forEach(function (post) {
-      const { id, title, media, description, endsAt, _count } = post;
+      const { id, seller, title, media, description, endsAt, _count } = post;
 
       let img = '';
       if (media !== '' && media != null) {
@@ -22,6 +31,7 @@ export async function runHomePage() {
                   src="${media}"
                   class="card-img-top"
                   alt="Bid image"
+                  style="width: 100%; height: 30vh; object-fit:cover"
                 />`;
       }
 
@@ -48,6 +58,7 @@ export async function runHomePage() {
                                 <p class="card-text">
                                 ${description}
                                 </p>
+                                <h6>Seller: ${seller.name}</h6>
                                 <h6>Bids: ${_count.bids}</h6>
                             </div>
                             <div class="card-footer">
@@ -61,6 +72,7 @@ export async function runHomePage() {
   }
   getAllPosts();
 
+  // search input
   let term = [];
 
   const search = document.querySelector('#searchForm');

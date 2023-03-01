@@ -57,6 +57,13 @@ export async function runProfilePage() {
                     />`;
       }
 
+      const finalDate = new Date(endsAt).toLocaleDateString('en-us', {
+        weekday: 'long',
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric',
+      });
+
       UserSinglePost.innerHTML += `
                     <div class="col">
                         <div class="card h-100">
@@ -73,7 +80,7 @@ export async function runProfilePage() {
                             </div>
                             <div class="card-footer">
                                 <small class="text-muted">
-                                <p id='ending'>Ends at ${endsAt}</p>
+                                <p id='ending'>Ends at ${finalDate}</p>
                                 </small>
                             </div>
                         </div>
