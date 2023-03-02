@@ -6,11 +6,13 @@ export async function createBidListener() {
   bidBtn.addEventListener('click', (e) => {
     e.preventDefault();
 
-    const bidForm = document.querySelector('#bid_Form');
+    const bidForm = document.querySelector('#bidInput');
 
-    const inputCredit = {
-      amount: Number(bidForm.value),
-    };
+    const inputCredit = parseInt(bidForm.value);
+
+    // const inputCredit = {
+    //   amount : Number(bidForm.value),
+    // };
 
     CreateBid(inputCredit);
     console.log(CreateBid);

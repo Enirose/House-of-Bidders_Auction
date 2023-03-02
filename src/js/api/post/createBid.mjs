@@ -10,6 +10,8 @@ export async function CreateBid(bidTotal) {
   const token = load('token');
   const createBidUrl = `${Base_URL}listings/${id}/bids`;
 
+  console.log(bidTotal);
+
   let bidAmount = {
     amount: bidTotal,
   };
@@ -28,6 +30,6 @@ export async function CreateBid(bidTotal) {
     window.location.reload();
     return postData;
   } else {
-    alert('Something went wrong!');
+    alert('Something went wrong! Try adding higher amount!');
   }
 }
