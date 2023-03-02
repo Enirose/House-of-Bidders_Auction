@@ -10805,7 +10805,9 @@ h5,
   background-color: #fdf1aa;
 }
 
-.button, .btn, .btn-primary {
+.button,
+.btn,
+.btn-primary {
   background-color: #8165ca;
   border-color: #8165ca;
 }

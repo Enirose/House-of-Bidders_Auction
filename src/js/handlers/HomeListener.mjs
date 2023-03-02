@@ -25,15 +25,26 @@ export async function runHomePage() {
     posts.forEach(function (post) {
       const { id, seller, title, media, description, endsAt, _count } = post;
 
-      let img = '';
-      if (media !== '' && media != null) {
-        img = `<img
-                  src="${media}"
-                  class="card-img-top"
-                  alt="Bid image"
-                  style="width: 100%; height: 30vh; object-fit:cover"
-                />`;
-      }
+      // let img = '';
+      // if (media !== '' && media != null) {
+      //   img = `<img
+      //             src="${media}"
+      //             class="card-img-top"
+      //             alt="Bid image"
+      //             style="width: 100%; height: 30vh; object-fit:cover"
+      //           />`;
+      // }
+
+      const img = `
+          <img src=
+            "${
+              media ??
+              'https://media.istockphoto.com/id/936182806/vector/no-image-available-sign.jpg'
+            }"
+            class="card-img-top"
+            alt="Bid image"
+            style="width: 100%; height: 30vh; object-fit:cover"
+      />`;
 
       const finalDate = new Date(endsAt).toLocaleDateString('en-us', {
         weekday: 'long',
