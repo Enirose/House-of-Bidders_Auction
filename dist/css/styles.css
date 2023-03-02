@@ -10805,6 +10805,18 @@ h5,
   background-color: #fdf1aa;
 }
 
+a {
+  font-family: playfair display "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+
+.nav-link:hover {
+  background-color: #8165ca;
+}
+
+.nav-item {
+  background-color: #8165ca;
+}
+
 .button,
 .btn,
 .btn-primary {
@@ -10818,6 +10830,18 @@ h5,
 }
 
 .navbar-toggler {
+  background-color: #8165ca;
+}
+
+.nav-link:hover {
+  background-color: #8165ca;
+}
+
+li .nav-item {
+  background-color: #8165ca;
+}
+
+#navBtn {
   background-color: #8165ca;
 }
 
