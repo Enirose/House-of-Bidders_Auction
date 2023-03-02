@@ -36,14 +36,10 @@ export async function runHomePage() {
       // }
 
       const img = `
-          <img src=
-            "${
-              media ??
-              'https://media.istockphoto.com/id/936182806/vector/no-image-available-sign.jpg'
-            }"
-            class="card-img-top"
-            alt="Bid image"
-            style="width: 100%; height: 30vh; object-fit:cover"
+        <img src="${media[0] ?? 'https://placehold.co/600x400'}"
+        class="card-img-top"
+        alt="Bid image"
+        style="width: 100%; height: 30vh; object-fit:cover"
       />`;
 
       const finalDate = new Date(endsAt).toLocaleDateString('en-us', {

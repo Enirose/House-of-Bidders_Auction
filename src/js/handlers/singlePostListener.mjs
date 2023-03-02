@@ -46,14 +46,21 @@ export async function runSinglePost() {
     // singleContainer.innerHTML = '';
 
     // check if user has a media to display
-    let img = '';
-    if (media !== '' && media != null) {
-      img = `<img
-                  src="${media}"
-                  class="img-fluid my-5"
-                  alt="Bid image"
-                />`;
-    }
+    // let img = '';
+    // if (media !== '' && media != null) {
+    //   img = `<img
+    //               src="${media}"
+    //               class="img-fluid my-5"
+    //               alt="Bid image"
+    //             />`;
+    // }
+
+    const img = `
+        <img src="${media[0] ?? 'https://placehold.co/600x400'}"
+        class="card-img-top"
+        alt="Bid image"
+        style="width: 100%; height: 30vh; object-fit:cover"
+    />`;
 
     const finalDate = new Date(endsAt).toLocaleDateString('en-us', {
       weekday: 'long',
