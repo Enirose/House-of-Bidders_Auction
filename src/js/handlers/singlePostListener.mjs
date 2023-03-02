@@ -1,6 +1,6 @@
 import { getPostId } from '../api/post/getSinglePostById.mjs';
 import { getUserProfile } from '../api/post/getUserProfile.mjs';
-import { getUserInfo, getUserName } from '../functions/functions.mjs';
+import { getUserInfo, getUserName, signOut } from '../functions/functions.mjs';
 import { createBidListener } from './createBidListener.mjs';
 
 export async function runSinglePost() {
@@ -106,16 +106,8 @@ export async function runSinglePost() {
     // singleContainer.innerHTML += ``;
   }
 
-  // const button = document.querySelector('#bid_Btn');
-  // document.querySelector('#bidderName').innerText = bids.bidderName;
-  // const highestBid = document.querySelector('#highest_bid');
-  // document.querySelector('#bid_count').innerText = _count.bids;
-  // document.querySelector('#bid_count').innerText = _count.bids;
-  // document.querySelector('#bid_count').innerText = _count.bids;
-
-  // button.addEventListener('click', () => {
-  //   console.log('SUP');
-  // });
-
   getSinglePost();
+
+  const logout = document.querySelector('#signOut');
+  logout.onclick = signOut;
 }
