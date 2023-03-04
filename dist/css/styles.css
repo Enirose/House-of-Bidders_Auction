@@ -10818,8 +10818,8 @@ a {
 }
 
 .button,
-.btn,
-.btn-primary {
+.btn-primary,
+.btn {
   background-color: #8165ca;
   border-color: #8165ca;
 }
@@ -10829,20 +10829,25 @@ a {
   border-color: #ed5c9d;
 }
 
+.btn:focus {
+  background-color: #ed5c9d;
+  border-color: #ed5c9d;
+}
+
 .navbar-toggler {
-  background-color: #8165ca;
-}
-
-.nav-link:hover {
-  background-color: #8165ca;
-}
-
-li .nav-item {
   background-color: #8165ca;
 }
 
 #navBtn {
   background-color: #8165ca;
+}
+
+nav {
+  background-color: #8165ca;
+}
+
+.card {
+  box-shadow: 1px 1px 25px #8165ca;
 }
 
 /*# sourceMappingURL=styles.css.map */

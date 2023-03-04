@@ -4,13 +4,23 @@
 @import '../scss/components/nav';
 
 .button,
-.btn,
-.btn-primary {
+.btn-primary,
+.btn {
   background-color: $primary;
   border-color: $primary;
 }
 
+// .btn-primary {
+//   background-color: $pink;
+//   border-color: $pink;
+// }
+
 .btn:hover {
+  background-color: $pink;
+  border-color: $pink;
+}
+
+.btn:focus {
   background-color: $pink;
   border-color: $pink;
 }
@@ -25,4 +35,8 @@
 
 nav {
   background-color: $purple;
+}
+
+.card {
+  box-shadow: 1px 1px 25px $primary;
 }
