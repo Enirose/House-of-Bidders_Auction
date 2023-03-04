@@ -32,7 +32,7 @@
     "sass": "^1.58.0"
   },
   "dependencies": {
-    "bootstrap": "^5.2.0"
+    "bootstrap": "^5.2.3"
   },
   "lint-staged": {
     "*.mjs": [
