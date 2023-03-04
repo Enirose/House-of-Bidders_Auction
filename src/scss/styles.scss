@@ -1,17 +1,42 @@
-@import "../../node_modules/bootstrap/scss/bootstrap";
-@import "../scss/components/variables";
-@import "../scss/components/carousel";
+@import '../../node_modules/bootstrap/scss/bootstrap';
+@import '../scss/components/variables';
+@import '../scss/components/carousel';
+@import '../scss/components/nav';
 
-.button, .btn, .btn-primary{
-    background-color: $primary;
-    border-color: $primary;
+.button,
+.btn-primary,
+.btn {
+  background-color: $primary;
+  border-color: $primary;
 }
 
-.btn:hover{
-    background-color: $pink;
-    border-color: $pink;
+// .btn-primary {
+//   background-color: $pink;
+//   border-color: $pink;
+// }
+
+.btn:hover {
+  background-color: $pink;
+  border-color: $pink;
+}
+
+.btn:focus {
+  background-color: $pink;
+  border-color: $pink;
 }
 
 .navbar-toggler {
-    background-color: $purple;
+  background-color: $purple;
+}
+
+#navBtn {
+  background-color: #8165ca;
+}
+
+nav {
+  background-color: $purple;
+}
+
+.card {
+  box-shadow: 1px 1px 25px $primary;
 }

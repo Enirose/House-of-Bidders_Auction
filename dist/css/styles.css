@@ -10758,31 +10758,96 @@ textarea.form-control-lg {
     display: none !important;
   }
 }
-h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5 {
-  font-family: "playfair display", "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+h1, .h1,
+h2,
+.h2,
+h3,
+.h3,
+h4,
+.h4,
+h5,
+.h5,
+.h1 {
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  color: #8165ca;
 }
 
-h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5 {
-  font-family: "playfair display", "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+#footer {
+  background-color: #8165ca;
+  font-weight: bold;
+  color: white;
+  bottom: 0;
+}
+
+h1, .h1,
+h2,
+.h2,
+h3,
+.h3,
+h4,
+.h4,
+h5,
+.h5,
+.h1 {
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  color: #8165ca;
+}
+
+#footer {
+  background-color: #8165ca;
+  font-weight: bold;
+  color: white;
+  bottom: 0;
 }
 
 .carousel-inner {
   padding: 25px;
-  background-color: #FDF1AA;
+  background-color: #fdf1aa;
 }
 
-.button, .btn, .btn-primary {
+a {
+  font-family: playfair display "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+
+.nav-link:hover {
+  background-color: #8165ca;
+}
+
+.nav-item {
+  background-color: #8165ca;
+}
+
+.button,
+.btn-primary,
+.btn {
   background-color: #8165ca;
   border-color: #8165ca;
 }
 
 .btn:hover {
-  background-color: #ED5C9D;
-  border-color: #ED5C9D;
+  background-color: #ed5c9d;
+  border-color: #ed5c9d;
+}
+
+.btn:focus {
+  background-color: #ed5c9d;
+  border-color: #ed5c9d;
 }
 
 .navbar-toggler {
   background-color: #8165ca;
+}
+
+#navBtn {
+  background-color: #8165ca;
+}
+
+nav {
+  background-color: #8165ca;
+}
+
+.card {
+  box-shadow: 1px 1px 25px #8165ca;
 }
 
 /*# sourceMappingURL=styles.css.map */

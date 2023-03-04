@@ -1,4 +1,13 @@
 $purple: #8165ca;
 a {
-    font-family: playfair display 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-family: playfair display 'Lucida Sans', 'Lucida Sans Regular',
+    'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.nav-link:hover {
+  background-color: $purple;
+}
+
+.nav-item {
+  background-color: #8165ca;
 }
