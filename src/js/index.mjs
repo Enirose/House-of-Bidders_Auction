@@ -7,21 +7,29 @@ import { avatarListener } from './handlers/avatarListener.mjs';
 import { runCreatePostListener } from './handlers/createPostListener.mjs';
 // import { createBidListener } from './handlers/createBidListener.mjs';
 
+const githubBase = '/House-of-Bidders_Auction';
+
 const path = location.pathname;
 switch (path) {
+  case githubBase + '/':
+  case githubBase + '/index.html':
   case '/':
   case '/index.html':
     runHomePage();
     break;
+  case githubBase + '/login.html':
   case '/login.html':
     loginListener();
     break;
+  case githubBase + '/register.html':
   case '/register.html':
     registerListener();
     break;
+  case githubBase + '/list.html':
   case '/list.html':
     runSinglePost();
     break;
+  case githubBase + '/profile.html':
   case '/profile.html':
     runProfilePage();
     avatarListener();
