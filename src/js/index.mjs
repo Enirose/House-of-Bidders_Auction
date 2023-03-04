@@ -8,38 +8,38 @@ import { runCreatePostListener } from './handlers/createPostListener.mjs';
 // import { createBidListener } from './handlers/createBidListener.mjs';
 
 const path = location.pathname;
-// switch (path) {
-//   case '/':
-//   case '/index.html':
-//     runHomePage();
-//     break;
-//   case '/login.html':
-//     loginListener();
-//     break;
-//   case '/register.html':
-//     registerListener();
-//     break;
-//   case '/list.html':
-//     runSinglePost();
-//     break;
-//   case '/profile.html':
-//     runProfilePage();
-//     avatarListener();
-//     runCreatePostListener();
-//     break;
-//   default:
-// }
-if (path === '/index.html' || path === '/') {
-  runHomePage();
-} else if (path === '/login.html') {
-  loginListener();
-} else if (path === '/register.html') {
-  registerListener();
-} else if (path === '/profile.html') {
-  runProfilePage();
-  avatarListener();
-  runCreatePostListener();
-} else if (path === '/list.html') {
-  runSinglePost();
-  // createBidListener();
+switch (path) {
+  case '/':
+  case '/index.html':
+    runHomePage();
+    break;
+  case '/login.html':
+    loginListener();
+    break;
+  case '/register.html':
+    registerListener();
+    break;
+  case '/list.html':
+    runSinglePost();
+    break;
+  case '/profile.html':
+    runProfilePage();
+    avatarListener();
+    runCreatePostListener();
+    break;
 }
+
+// if (path === '/index.html' || path === '/') {
+//   runHomePage();
+// } else if (path === '/login.html') {
+//   loginListener();
+// } else if (path === '/register.html') {
+//   registerListener();
+// } else if (path === '/profile.html') {
+//   runProfilePage();
+//   avatarListener();
+//   runCreatePostListener();
+// } else if (path === '/list.html') {
+//   runSinglePost();
+//   // createBidListener();
+// }
