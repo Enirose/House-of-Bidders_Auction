@@ -1,5 +1,6 @@
 import { getPosts } from '../api/post/getAllList.mjs';
 import { getUserInfo, signOut } from '../functions/functions.mjs';
+import { hideLoadingSign } from '../functions/loader.mjs';
 
 export async function runHomePage() {
   const signedInUser = getUserInfo('accessToken');
@@ -53,6 +54,8 @@ export async function runHomePage() {
       // if (seller.avatar !== '' && seller.avatar != null) {s
       //   avatar = seller.avatar;
       // }
+
+      hideLoadingSign();
 
       AllPostContainer.innerHTML += `
                     <div class="col">
