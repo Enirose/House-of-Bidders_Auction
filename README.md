@@ -5,7 +5,7 @@
 
 ## Project description
 
-An auction website, where a everyone can view and search what auction list. Yet only a registered member can add a bid.
+An auction website, where everyone can view and search what auction list available in pur website. But only a registered member can add a bid.
 
 ## User Stories
 
@@ -51,18 +51,20 @@ An auction website, where a everyone can view and search what auction list. Yet 
 
 ### Hosting
 
-[✓] github
+[✓] Netlify
  
 ## Project links
 Live site
+https://storied-fairy-4f9600.netlify.app/
 
 Work with this project
 
 ## Clone the project or download and extract the zip file in your editor
 
-git clone 
+git clone https://github.com/Enirose/House-of-Bidders_Auction
 ## Install dependencies
 npm i 
 
 ## Compile css and also open live server with
 npm run watch
+
