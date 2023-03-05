@@ -6,6 +6,7 @@
  */
 
 const method = 'post';
+const errorMsg = document.querySelector('.errorMessage');
 
 export async function register(url, profile) {
   const response = await fetch(url, {
@@ -22,7 +23,8 @@ export async function register(url, profile) {
     window.location.replace('/login.html');
     return result;
   } else {
-    alert('Something went wrong!');
+    errorMsg.classList.add('alert-warning');
+    errorMsg.innerHTML += `That account already exist! Please create a new one.`;
     return false;
   }
 }

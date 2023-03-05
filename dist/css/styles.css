@@ -10787,7 +10787,8 @@ h5,
   background-color: #8165ca;
   font-weight: bold;
   color: white;
-  bottom: 0;
+  margin-top: auto;
+  margin: auto;
 }
 
 h1, .h1,
@@ -10808,7 +10809,8 @@ h5,
   background-color: #8165ca;
   font-weight: bold;
   color: white;
-  bottom: 0;
+  margin-top: auto;
+  margin: auto;
 }
 
 .carousel-inner {
