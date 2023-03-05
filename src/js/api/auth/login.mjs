@@ -7,6 +7,7 @@ import * as storage from '../../localStorage/localStorage.mjs';
  */
 
 const method = 'post';
+const errorMsg = document.querySelector('.errorMessage');
 
 export async function login(url, profile) {
   const response = await fetch(url, {
@@ -27,6 +28,8 @@ export async function login(url, profile) {
     window.location.replace('/profile.html');
     return response;
   } else {
-    return false;
+    errorMsg.classList.add('alert-warning');
+    errorMsg.innerHTML += `Something went wrong, try another email or password!`;
+    // alert('Please enter your valid email or password');
   }
 }
