@@ -59,7 +59,7 @@ Live site of House of Bidders
 https://storied-fairy-4f9600.netlify.app/
 
 ## Built with
--  [React + Vite](https://vitejs.dev/)
+-  JS(JavaScript)
 -  [React Bootstrap v5.2](https://react-bootstrap.netlify.app/)
 -  [Sass](https://sass-lang.com/)
 
