@@ -1,11 +1,12 @@
 [![Deploy static content to Pages](https://github.com/Enirose/House-of-Bidders_Auction/actions/workflows/main.yml/badge.svg)](https://github.com/Enirose/House-of-Bidders_Auction/actions/workflows/main.yml)
 
 # House-of-Bidders_Auction
-![image](https://user-images.githubusercontent.com/95321157/222924688-74961be9-58ae-4a37-aaa2-481afd43efaf.png)
+![image](https://github.com/Enirose/House-of-Bidders_Auction/assets/95321157/5738b8c6-2951-4709-9803-3f553924491f)
 
-## Project description
 
-An auction website, where everyone can view and search what auction list available in pur website. But only a registered member can add a bid.
+## Description
+
+An auction website, where everyone can view and search what auction list available in our website. But only a registered member can add a bid.
 
 ## User Stories
 
@@ -53,18 +54,37 @@ An auction website, where everyone can view and search what auction list availab
 
 [✓] Netlify
  
-## Project links
-Live site
+## Live Site
+Live site of House of Bidders
 https://storied-fairy-4f9600.netlify.app/
 
-Work with this project
+## Built with
+-  [React + Vite](https://vitejs.dev/)
+-  [React Bootstrap v5.2](https://react-bootstrap.netlify.app/)
+-  [Sass](https://sass-lang.com/)
 
-## Clone the project or download and extract the zip file in your editor
+## Getting Started
+#### Installing
+- Fork the repo
+- Clone fork to your computer
+- Open it in your preferred IDE
 
-git clone https://github.com/Enirose/House-of-Bidders_Auction
-## Install dependencies
-npm i 
+1. Clone the repo:
+```ruby
+git clone https://github.com/Enirose/House-of-Bidders_Auction.git
+```
 
-## Compile css and also open live server with
-npm run watch
+2. Install the dependencies:
+```ruby
+npm install
+```
+
+## Running
+To run and build the app, run the following commands:
+```ruby
+npm run build
+```
+
+## Contact
+[My LinkedIn Page](www.linkedin.com/in/maria-enirose-hellum-1b47bb1b5)
 
